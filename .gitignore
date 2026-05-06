@@ -1,0 +1,30 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.vscode/
+.idea/
+
+# Test-Artefakte
+verify-*.png
+verify-*.jpg
+verify-*.jpeg
+*.test-results/
+
+# Logs
+*.log
+
+# Lokale Konfig / Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# Optional: Node
+node_modules/
+.npm/
+dist/
+build/
