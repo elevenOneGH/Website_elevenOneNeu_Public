@@ -1,6 +1,6 @@
 # elevenOne — Website (Public Deploy)
 
-Statisches Multi-Page-Web der elevenOne GmbH. Vanilla HTML / CSS / JS, kein Build-Tool nötig.
+Statische Multi-Page-Website der elevenOne GmbH. Vanilla HTML / CSS / JS, kein Build-Tool nötig.
 
 → Live unter [elevenone.at](https://elevenone.at)
 
@@ -11,10 +11,29 @@ Statisches Multi-Page-Web der elevenOne GmbH. Vanilla HTML / CSS / JS, kein Buil
 - **Cookies**: Default keine — `gtag.js` (Google Ads) wird erst nach Consent-Akzept geladen
 - **Aesthetik**: *Engineering Precision Editorial* — technische Zeichnungssprache + editorial Typo, dark only
 
+## Deployment
+
+Diese Site wird via **Coolify** auf einem Hetzner-VPS deployt: https://coolify.elevenone.at/
+
+### Schnell-Deploy-Setup (einmalig)
+
+1. **Coolify** öffnen → New Resource → **Public Repository**
+2. Repo-URL: `https://github.com/elevenOneGH/Website_elevenOneNeu_Public`
+3. Branch: `main`
+4. Build Pack: **Static** (oder Nixpacks falls Static fehlt)
+5. Publish Directory: `.` (Punkt = Root)
+6. Build Command: leer
+7. Domains hinzufügen: `elevenone.at` + `www.elevenone.at`
+8. Force HTTPS aktivieren — Let's Encrypt holt sich Cert automatisch
+9. **GitHub Webhook** in Coolify-Resource aktivieren → URL ins GitHub-Repo (Settings → Webhooks)
+
+### Automatische Updates
+
+Jeder `git push` auf `main` → GitHub-Webhook → Coolify pullt + redeployt → Live in <30s.
+
 ## Lokale Entwicklung
 
 ```bash
-# Python 3 ausreicht — kein Build-Tool, kein npm
 python3 -m http.server 8765
 # Browser → http://localhost:8765/
 ```
@@ -27,7 +46,7 @@ py -m http.server 8765
 
 ## Subseiten generieren
 
-Body-Fragments in [_build/](./_build/) liegen als `body-*.html` vor. Der Builder fügt sie in [_build/layout.html](./_build/layout.html) ein.
+Body-Fragments in [_build/](./_build/) als `body-*.html`. Der Builder fügt sie in [_build/layout.html](./_build/layout.html) ein.
 
 ```powershell
 .\_build\build.ps1 -Page kontakt
@@ -38,67 +57,31 @@ Body-Fragments in [_build/](./_build/) liegen als `body-*.html` vor. Der Builder
 
 `index.html` und `recht/impressum.html` sind eigenständig gepflegt.
 
-## Deploy auf Hetzner VPS
+## Alternativ-Deployment (ohne Coolify)
 
-### Variante A — Nginx Static (empfohlen)
-
-```bash
-# 1) Auf VPS clonen
-sudo git clone https://github.com/elevenOneGH/Website_elevenOneNeu_Public.git /var/www/elevenone
-cd /var/www/elevenone
-
-# 2) Nginx-Site anlegen
-sudo nano /etc/nginx/sites-available/elevenone.conf
-```
+### Nginx Static
 
 ```nginx
 server {
     listen 80;
-    listen [::]:80;
     server_name elevenone.at www.elevenone.at;
-
     root /var/www/elevenone;
     index index.html;
-
-    # Saubere URLs ohne .html-Suffix
-    location / {
-        try_files $uri $uri.html $uri/ =404;
-    }
-
-    # Self-hosted Fonts: lange Cache, immutable
-    location /assets/fonts/ {
-        expires 1y;
-        add_header Cache-Control "public, immutable";
-        types { font/woff2 woff2; }
-    }
-
-    # Statische Assets: 30 Tage Cache
-    location /assets/ {
-        expires 30d;
-        add_header Cache-Control "public";
-    }
-
-    # 404-Page
+    location / { try_files $uri $uri.html $uri/ =404; }
+    location /assets/fonts/ { expires 1y; add_header Cache-Control "public, immutable"; }
+    location /assets/ { expires 30d; add_header Cache-Control "public"; }
     error_page 404 /404.html;
-
-    # Security Headers (DSGVO-konform)
     add_header X-Frame-Options "SAMEORIGIN" always;
     add_header X-Content-Type-Options "nosniff" always;
     add_header Referrer-Policy "strict-origin-when-cross-origin" always;
-    add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
 }
 ```
 
 ```bash
-# 3) Aktivieren + Reload
-sudo ln -s /etc/nginx/sites-available/elevenone.conf /etc/nginx/sites-enabled/
-sudo nginx -t && sudo systemctl reload nginx
-
-# 4) Let's Encrypt SSL
 sudo certbot --nginx -d elevenone.at -d www.elevenone.at
 ```
 
-### Variante B — Caddy (alternative, automatic HTTPS)
+### Caddy
 
 ```caddyfile
 elevenone.at, www.elevenone.at {
@@ -106,66 +89,42 @@ elevenone.at, www.elevenone.at {
     file_server
     encode zstd gzip
     try_files {path} {path}.html {path}/ /404.html
-
     @fonts path /assets/fonts/*
     header @fonts Cache-Control "public, max-age=31536000, immutable"
-
-    @assets path /assets/*
-    header @assets Cache-Control "public, max-age=2592000"
-
+    header /assets/* Cache-Control "public, max-age=2592000"
     header {
         X-Frame-Options "SAMEORIGIN"
         X-Content-Type-Options "nosniff"
         Referrer-Policy "strict-origin-when-cross-origin"
-        Permissions-Policy "geolocation=(), microphone=(), camera=()"
     }
 }
 ```
 
-### Updates pullen
+## Vor Live-Gang
 
-```bash
-cd /var/www/elevenone
-sudo git pull
-sudo systemctl reload nginx
-```
-
-Optional Auto-Deploy via **GitHub Webhook** + Cron-Pull oder GitHub Actions.
-
-## Vor Live-Gang noch zu erledigen
-
-- [ ] Google Ads Conversion-ID in [assets/js/consent.js](./assets/js/consent.js) Zeile 13 (`AW-XXXXXXXXX`) eintragen
-- [ ] og-cover.jpg (1200×630) in [assets/img/](./assets/img/) ablegen — aktuell Platzhalter
+- [ ] Google Ads Conversion-ID in [assets/js/consent.js](./assets/js/consent.js) Zeile 13 (`AW-XXXXXXXXX`) ersetzen
+- [ ] og-cover.jpg (1200×630) in [assets/img/](./assets/img/) ablegen
+- [ ] DNS-A-Records für `elevenone.at` + `www` auf Hetzner-VPS-IP zeigen lassen (siehe internes Doku im Source-Repo)
 - [ ] Lighthouse-Audit & Rich-Results-Test
-- [ ] DNS A/AAAA-Records auf VPS-IP zeigen lassen
+- [ ] Coolify-Auto-Deploy-Webhook getestet
 
 ## Struktur
 
 ```
 .
-├── index.html                          Hero + Produkt-Widgets + Methodik + Roadmap-Teaser
+├── index.html
 ├── 404.html
-├── kontakt.html                        Mailto-Hub
-├── unternehmen/
-│   ├── ueber-uns.html                  Founder Robert Hermann
-│   └── roadmap.html                    Vertikale Timeline 2016–2026
-├── leistungen/
-│   ├── index.html                      Übersicht 3 Produkte
-│   ├── ki-checkup.html                 Produkt 01
-│   ├── start-projekt.html              Produkt 02
-│   └── ki-roadmap-projekt.html         Produkt 03 (mit 6 QualityGates)
-├── projektmanagement/
-│   ├── six-steps.html                  Six Steps to Success
-│   └── pcp-engineering.html            AI PCP-Engineering™
-├── recht/
-│   ├── impressum.html
-│   └── datenschutz.html
+├── kontakt.html
+├── unternehmen/         (über-uns, roadmap)
+├── leistungen/          (3 Produkte + Übersicht)
+├── projektmanagement/   (six-steps, pcp-engineering)
+├── recht/               (impressum, datenschutz)
 ├── assets/
-│   ├── css/{tokens.css, style.css, site.css}
-│   ├── js/{app, consent, hero-canvas, pcp-svg, widget-disclosure}.js
-│   ├── fonts/                          Manrope (3 weights), IBM Plex Mono (2 weights)
-│   └── img/                            Logos, Founder-Foto, PCP-Triangle
-├── _build/                             Layout + Body-Fragments + PowerShell-Builder
+│   ├── css/             (tokens, style, site)
+│   ├── js/              (app, consent, hero-canvas, pcp-svg, widget-disclosure)
+│   ├── fonts/           (Manrope 3 weights, IBM Plex Mono 2 weights)
+│   └── img/
+├── _build/              (Layout + Body-Fragments + PowerShell-Builder)
 ├── sitemap.xml
 └── robots.txt
 ```
@@ -192,4 +151,5 @@ Verwendete Open-Source-Schriften unter SIL Open Font License (OFL):
 
 ---
 
-Source-Repository (privat): `Website_elevenOneNeu_Projekt`
+Source-Repository (privat, mit vollständiger Dokumentation):
+[Website_elevenOneNeu_Projekt](https://github.com/elevenOneGH/Website_elevenOneNeu_Projekt)
