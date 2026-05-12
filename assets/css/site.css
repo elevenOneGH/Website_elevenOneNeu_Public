@@ -74,17 +74,17 @@ body {
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
   align-items: end;
-  min-height: 260px;
+  min-height: 150px;
   padding: 0 var(--s2);
   gap: var(--s2);
 }
 .brand {
   grid-column: 1; grid-row: 1 / 3;
-  display: inline-flex; align-self: end; justify-self: start;
-  padding-bottom: var(--s3);
+  display: inline-flex; align-self: start; justify-self: start;
+  padding-top: var(--s2);
 }
 .brand-mark {
-  height: 220px; width: auto; display: block;
+  height: 110px; width: auto; display: block;
 }
 
 .site-nav {
@@ -102,12 +102,12 @@ body {
 }
 
 @media (max-width: 900px) {
-  .site-header-inner { min-height: 200px; }
-  .brand-mark { height: 160px; }
+  .site-header-inner { min-height: 120px; }
+  .brand-mark { height: 80px; }
 }
 @media (max-width: 600px) {
-  .site-header-inner { min-height: 140px; }
-  .brand-mark { height: 110px; }
+  .site-header-inner { min-height: 95px; }
+  .brand-mark { height: 55px; }
 }
 
 .site-nav { display: block; }
