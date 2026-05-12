@@ -126,6 +126,30 @@
     });
   }
 
+  // ── aria-current="page" auf aktiven Nav-Link ───────────────
+  // Setzt auf jedem Link in Site-Nav und Footer-Nav, dessen Pfad zur aktuellen URL passt.
+  // CSS: 1px Copper-Hairline unter dem aktiven Link (Engineering-Precision-Stil).
+  function initAriaCurrentPage() {
+    const norm = (p) => {
+      if (!p) return '/';
+      // Trailing-Slash strippen außer bei Root
+      let s = p.replace(/\/+$/, '');
+      return s.length ? s : '/';
+    };
+    const currentPath = norm(window.location.pathname);
+    const currentHtml = currentPath === '/' ? '/index.html' : currentPath;
+    document.querySelectorAll('.site-nav a[href], .footer-nav a[href]').forEach(function (link) {
+      const href = link.getAttribute('href');
+      // nur interne, absolute Pfade behandeln
+      if (!href || !href.startsWith('/')) return;
+      const linkPath = norm(href.split('#')[0].split('?')[0]);
+      const linkHtml = linkPath === '/' ? '/index.html' : linkPath;
+      if (linkPath === currentPath || linkHtml === currentHtml) {
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  }
+
   // ── Smooth-Scroll für Anker-Links (mit prefers-reduced-motion) ──
   function initSmoothAnchors() {
     document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -150,6 +174,7 @@
     initHeader();
     initTracking();
     initSmoothAnchors();
+    initAriaCurrentPage();
   }
 
   if (document.readyState === 'loading') {

@@ -555,7 +555,7 @@ main:focus { outline: none; }
   color: var(--copper-500);
   font-size: .72rem; letter-spacing: .15em;
 }
-.step h4 {
+.step h3 {
   font-family: var(--font-display);
   font-size: 1.15rem;
   margin: var(--s1) 0;
@@ -680,7 +680,7 @@ main:focus { outline: none; }
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: var(--s3);
 }
-.footer-nav h5 {
+.footer-nav h2 {
   font-family: var(--font-mono); text-transform: uppercase;
   font-size: .72rem; letter-spacing: .15em;
   color: var(--copper-500);
@@ -997,3 +997,186 @@ main:focus { outline: none; }
 }
 .btn-ghost:hover::after { transform: scaleX(1); }
 .btn-sm { padding: 8px 16px; font-size: .72rem; }
+
+/* === Breadcrumbs (Engineering Precision Editorial) === */
+/* Hairline-Trenner, IBM Plex Mono uppercase, dezent ueber dem H1.
+   Folgt dem section-mark-Sprachsystem ohne zusaetzliche Card. */
+.breadcrumb {
+  margin: 0 0 var(--s4, 16px);
+  padding: 0;
+}
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3, #564A3A);
+}
+.breadcrumb-item { display: inline-flex; align-items: center; }
+.breadcrumb-item:not(:last-child)::after {
+  content: "·";
+  margin-left: 12px;
+  color: var(--copper-500, #A84221);
+  font-weight: 700;
+}
+.breadcrumb-item a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease, color .2s ease;
+  padding-bottom: 1px;
+}
+.breadcrumb-item a:hover,
+.breadcrumb-item a:focus-visible {
+  color: var(--copper-500, #A84221);
+  border-bottom-color: var(--copper-500, #A84221);
+}
+.breadcrumb-item[aria-current="page"] {
+  color: var(--ink, #0A0806);
+}
+[data-theme="dark"] .breadcrumb-list { color: var(--ink-3); }
+[data-theme="dark"] .breadcrumb-item[aria-current="page"] { color: var(--bone, #E8E0D2); }
+
+/* === aria-current Nav-Indikator (Engineering-Precision-Hairline) === */
+/* 1px Copper-Hairline unter dem aktiven Nav-Link, keine Pille, kein Hintergrund. */
+.site-nav a[aria-current="page"],
+.site-nav .nav-trigger[aria-current="page"],
+.footer-nav a[aria-current="page"] {
+  position: relative;
+  color: var(--copper-500, #A84221);
+}
+.site-nav a[aria-current="page"]::after,
+.footer-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  background: var(--copper-500, #A84221);
+}
+
+/* === Consent-Categories (Engineering-Datenblatt-Optik) === */
+/* Mono-Labels, Hairline-Trenner, kein Drop-Shadow. */
+.consent-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 16px 0;
+  border-top: 1px solid var(--copper-500, #A84221);
+  border-bottom: 1px solid var(--copper-500, #A84221);
+}
+.consent-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+  flex: 1 1 auto;
+  min-width: 0;
+  border-right: 1px solid var(--paper-3, #C9AE8E);
+  transition: background-color .2s ease;
+}
+.consent-toggle:last-child { border-right: 0; }
+.consent-toggle:hover:not(.consent-toggle-disabled) {
+  background-color: rgba(168, 66, 33, 0.04);
+}
+.consent-toggle-disabled { cursor: not-allowed; opacity: 0.7; }
+.consent-toggle-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink, #0A0806);
+}
+.consent-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: inherit;
+  accent-color: var(--copper-500, #A84221);
+}
+.consent-toggle-hint {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3, #564A3A);
+}
+[data-theme="dark"] .consent-toggle { border-right-color: rgba(254,245,226,0.18); }
+[data-theme="dark"] .consent-toggle-label { color: var(--bone, #E8E0D2); }
+[data-theme="dark"] .consent-toggle-hint { color: var(--ink-3); }
+@media (max-width: 600px) {
+  .consent-categories { flex-direction: column; }
+  .consent-toggle { border-right: 0; border-bottom: 1px solid var(--paper-3, #C9AE8E); }
+  .consent-toggle:last-child { border-bottom: 0; }
+}
+
+/* === Trust-Stamp im Hero (CAD-Annotation-Stil) === */
+/* Dezent, IBM Plex Mono uppercase, Copper-Akzent, keine Border, keine Card. */
+.trust-stamp {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--copper-600, #8A2A1C);
+  margin-top: 14px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+[data-theme="dark"] .trust-stamp { color: var(--copper-300, #EB8A34); }
+@media (max-width: 720px) {
+  .trust-stamp { letter-spacing: 0.08em; font-size: 9px; }
+}
+
+/* === Meta-Stand-Label (Engineering-Datenblatt-Annotation) === */
+.meta-mono {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3, #564A3A);
+  margin: -8px 0 16px;
+}
+[data-theme="dark"] .meta-mono { color: var(--ink-3); }
+
+/* === Skip-Nav fuer Sektionen (versteckt, bei Tab-Fokus sichtbar) === */
+.skip-nav {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-nav a:focus {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  width: auto;
+  height: auto;
+  background: var(--ink, #0A0806);
+  color: var(--copper-200, #F4B35E);
+  padding: 8px 14px;
+  border: 1px solid var(--copper-500);
+  border-radius: 4px;
+  z-index: 10000;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.skip-nav a + a:focus { left: auto; right: 8px; }

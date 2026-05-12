@@ -1,16 +1,45 @@
 /**
- * elevenOne — Cookie-Consent Layer (DSGVO-konform, minimal)
+ * elevenOne — Cookie-Consent Layer (DSGVO-konform, granular)
  * - Default: keine Cookies, keine Tracker.
- * - LocalStorage-Key: eo-consent-v1 → "granted" | "denied"
- * - Erst bei "granted" wird gtag.js nachgeladen.
- * - Banner via Footer-Link "Cookie-Einstellungen" widerrufbar.
+ * - LocalStorage-Key: eo-consent-v2 → JSON { necessary:true, analytics:bool }
+ * - Migration vom alten v1-Format (string "granted" | "denied").
+ * - Analytics-Toggle steuert das Nachladen von gtag.js.
+ * - Banner via Footer-Link "Cookie-Einstellungen" jederzeit widerrufbar.
  */
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'eo-consent-v1';
+  const STORAGE_KEY_V2 = 'eo-consent-v2';
+  const STORAGE_KEY_V1 = 'eo-consent-v1';
   // Platzhalter: vom User später durch echte Google-Ads-ID ersetzen.
   const GTAG_ID = 'AW-XXXXXXXXX';
+
+  function readState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY_V2);
+      if (raw) {
+        const obj = JSON.parse(raw);
+        return { necessary: true, analytics: !!obj.analytics };
+      }
+      // Migration v1 -> v2
+      const v1 = localStorage.getItem(STORAGE_KEY_V1);
+      if (v1 === 'granted') {
+        const migrated = { necessary: true, analytics: true };
+        writeState(migrated);
+        return migrated;
+      }
+      if (v1 === 'denied') {
+        const migrated = { necessary: true, analytics: false };
+        writeState(migrated);
+        return migrated;
+      }
+    } catch (e) {}
+    return null; // kein gespeicherter State -> Banner zeigen
+  }
+
+  function writeState(state) {
+    try { localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(state)); } catch (e) {}
+  }
 
   function loadGtag() {
     if (window.gtag || GTAG_ID === 'AW-XXXXXXXXX') {
@@ -31,9 +60,9 @@
     window.gtag('config', GTAG_ID);
   }
 
-  function setConsent(value) {
-    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
-    if (value === 'granted') loadGtag();
+  function applyState(state) {
+    writeState(state);
+    if (state.analytics) loadGtag();
     hideBanner();
   }
 
@@ -44,16 +73,25 @@
 
   function showBanner() {
     const banner = document.querySelector('[data-consent-banner]');
-    if (banner) banner.hidden = false;
+    if (!banner) return;
+    banner.hidden = false;
+    // Beim Re-Öffnen den aktuellen Analytics-Stand in den Toggle übertragen
+    const current = readState();
+    const toggle = banner.querySelector('#consent-analytics');
+    if (toggle && current) toggle.checked = !!current.analytics;
+  }
+
+  function readAnalyticsToggle() {
+    const toggle = document.querySelector('#consent-analytics');
+    return toggle ? !!toggle.checked : false;
   }
 
   function init() {
-    let stored = null;
-    try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+    const stored = readState();
 
-    if (stored === 'granted') {
+    if (stored && stored.analytics) {
       loadGtag();
-    } else if (stored !== 'denied') {
+    } else if (!stored) {
       showBanner();
     }
 
@@ -61,8 +99,15 @@
     document.querySelectorAll('[data-consent-action]').forEach(btn => {
       btn.addEventListener('click', () => {
         const action = btn.dataset.consentAction;
-        if (action === 'accept')  setConsent('granted');
-        if (action === 'decline') setConsent('denied');
+        if (action === 'accept') {
+          applyState({ necessary: true, analytics: readAnalyticsToggle() });
+        }
+        if (action === 'decline') {
+          applyState({ necessary: true, analytics: false });
+        }
+        if (action === 'accept-all') {
+          applyState({ necessary: true, analytics: true });
+        }
       });
     });
 

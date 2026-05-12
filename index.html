@@ -3,28 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>elevenOne — KI-Transformation, präzise konstruiert</title>
+  <title>elevenOne — KI-Transformation für KMU, ROI-getrieben in 24 Stunden</title>
   <meta name="description" content="elevenOne GmbH — KI-Beratung & KI-Agentur für KMU. Strategie, Umsetzung, Change Management nach AI PCP-Engineering™.">
   <meta name="theme-color" content="#0A0806">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://elevenone.at/">
+
+  <!-- LCP-Optimierung: Hero-Font (Manrope 700) und Subline-Font (Manrope 400) preload -->
+  <link rel="preload" href="/assets/fonts/manrope-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- OpenGraph / Twitter -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="elevenOne — KI-Transformation, präzise konstruiert">
+  <meta property="og:title" content="elevenOne — KI-Transformation für KMU, ROI-getrieben in 24 Stunden">
   <meta property="og:description" content="KI-Beratung & KI-Agentur für KMU. Strategie, Umsetzung, Change Management nach AI PCP-Engineering™.">
   <meta property="og:image" content="https://elevenone.at/assets/img/og-cover.jpg">
+  <meta property="og:image:alt" content="elevenOne GmbH, KI-Beratung und KI-Agentur Österreich">
   <meta property="og:url" content="https://elevenone.at/">
   <meta property="og:locale" content="de_AT">
+  <meta property="og:site_name" content="elevenOne GmbH">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="elevenOne — KI-Transformation für KMU, ROI-getrieben in 24 Stunden">
+  <meta name="twitter:description" content="KI-Beratung & KI-Agentur für KMU. Strategie, Umsetzung, Change Management nach AI PCP-Engineering™.">
+  <meta name="twitter:image" content="https://elevenone.at/assets/img/og-cover.jpg">
+  <meta name="twitter:image:alt" content="elevenOne GmbH, KI-Beratung Österreich">
 
   <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/logo-mark.png" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/img/logo-mark.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- Stylesheets — tokens.css MUSS vor style.css geladen werden -->
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260512">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260512">
+  <link rel="stylesheet" href="/assets/css/site.css?v=20260512">
 
   <!-- Schema.org Organization -->
   <script type="application/ld+json">
@@ -37,7 +49,23 @@
     "foundingDate": "2016",
     "founder": { "@type": "Person", "name": "Robert Hermann" },
     "email": "info@elevenone.at",
-    "address": { "@type": "PostalAddress", "addressCountry": "AT" }
+    "telephone": "+4368184555646",
+    "vatID": "ATU70431712",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Grillparzerstraße 20",
+      "addressLocality": "Feldbach",
+      "postalCode": "8330",
+      "addressRegion": "Steiermark",
+      "addressCountry": "AT"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "info@elevenone.at",
+      "telephone": "+4368184555646",
+      "availableLanguage": ["German"]
+    }
   }
   </script>
 </head>
@@ -45,6 +73,14 @@
 
   <!-- ══ Skip-Link (a11y) ═══════════════════════════════════ -->
   <a href="#main" class="skip-link">Zum Inhalt</a>
+  <nav class="skip-nav" aria-label="Sektion-Navigation Startseite">
+    <a href="#hero">Hero</a>
+    <a href="#produkte">Leistungen</a>
+    <a href="#pcp">PCP-Engineering</a>
+    <a href="#six-steps">Six Steps</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#cta">Kontakt</a>
+  </nav>
 
   <!-- ══ Consent-Banner (DSGVO) ════════════════════════════ -->
   <aside class="consent-banner" data-consent-banner hidden>
@@ -52,11 +88,24 @@
       <p class="consent-text">
         <strong>Ihre Privatsphäre</strong> &nbsp;·&nbsp;
         Wir verwenden ausschließlich technisch notwendige Cookies. Optional können Sie Reichweiten-Messung (Google Ads) zustimmen, um diese Website zu verbessern. Mehr in der
-        <a href="/recht/datenschutz.html">Datenschutzerklärung</a>.
+        <a href="/recht/datenschutz">Datenschutzerklärung</a>.
       </p>
+      <div class="consent-categories">
+        <label class="consent-toggle consent-toggle-disabled">
+          <span class="consent-toggle-label label-mono">NOTWENDIG</span>
+          <input type="checkbox" checked disabled aria-label="Notwendige Cookies, immer aktiv">
+          <span class="consent-toggle-hint">Immer aktiv</span>
+        </label>
+        <label class="consent-toggle">
+          <span class="consent-toggle-label label-mono">ANALYTICS</span>
+          <input type="checkbox" id="consent-analytics" aria-label="Google Ads Conversion-Tracking erlauben">
+          <span class="consent-toggle-hint">Google Ads</span>
+        </label>
+      </div>
       <div class="consent-actions">
-        <button type="button" class="btn btn-ghost btn-sm" data-consent-action="decline">Ablehnen</button>
-        <button type="button" class="btn btn-primary btn-sm" data-consent-action="accept">Akzeptieren</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-consent-action="decline">Nur notwendige</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-consent-action="accept">Auswahl erlauben</button>
+        <button type="button" class="btn btn-primary btn-sm" data-consent-action="accept-all">Alle akzeptieren</button>
       </div>
     </div>
   </aside>
@@ -65,7 +114,7 @@
   <header class="site-header" data-header>
     <div class="site-header-inner">
       <a href="/" class="brand" aria-label="elevenOne — Startseite">
-        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="brand-mark">
+        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="brand-mark" width="120" height="100" loading="eager" decoding="async">
       </a>
 
       <nav class="site-nav" data-nav aria-label="Hauptnavigation">
@@ -74,17 +123,17 @@
           <li class="nav-item has-sub">
             <button type="button" class="nav-trigger" aria-expanded="false">Unternehmen<span aria-hidden="true">▾</span></button>
             <ul class="nav-sub">
-              <li><a href="/unternehmen/ueber-uns.html">Wir über uns</a></li>
-              <li><a href="/unternehmen/roadmap.html">Roadmap</a></li>
+              <li><a href="/unternehmen/ueber-uns">Wir über uns</a></li>
+              <li><a href="/unternehmen/roadmap">Roadmap</a></li>
             </ul>
           </li>
 
           <li class="nav-item has-sub">
             <button type="button" class="nav-trigger" aria-expanded="false">KI-Beratung &amp; Agentur<span aria-hidden="true">▾</span></button>
             <ul class="nav-sub">
-              <li><a href="/leistungen/ki-checkup.html">KI-Checkup</a></li>
-              <li><a href="/leistungen/start-projekt.html">Start-Projekt</a></li>
-              <li><a href="/leistungen/ki-roadmap-projekt.html">KI-Roadmap-Projekt</a></li>
+              <li><a href="/leistungen/ki-checkup">KI-Checkup</a></li>
+              <li><a href="/leistungen/start-projekt">Start-Projekt</a></li>
+              <li><a href="/leistungen/ki-roadmap-projekt">KI-Roadmap-Projekt</a></li>
               <li><a href="/leistungen/" class="nav-sub-all">Übersicht →</a></li>
             </ul>
           </li>
@@ -92,13 +141,13 @@
           <li class="nav-item has-sub">
             <button type="button" class="nav-trigger" aria-expanded="false">elevenOne Projektmanagement-Modell<span aria-hidden="true">▾</span></button>
             <ul class="nav-sub">
-              <li><a href="/projektmanagement/six-steps.html">Six Steps to Success</a></li>
-              <li><a href="/projektmanagement/pcp-engineering.html">AI PCP-Engineering™</a></li>
+              <li><a href="/projektmanagement/six-steps">Six Steps to Success</a></li>
+              <li><a href="/projektmanagement/pcp-engineering">AI PCP-Engineering™</a></li>
             </ul>
           </li>
 
           <li class="nav-item">
-            <a href="/kontakt.html" class="nav-link nav-cta">Kontakt</a>
+            <a href="/kontakt" class="nav-link nav-cta">Kontakt</a>
           </li>
         </ul>
       </nav>
@@ -112,16 +161,17 @@
   <main id="main" tabindex="-1">
 
     <!-- ═══ § 01 / 06 — HERO ═══════════════════════════════ -->
-    <section class="hero">
+    <section class="hero" id="hero">
       <span class="section-mark hero-mark">01 / 06 — INTRODUCTION</span>
       <div class="hero-grid">
         <div class="hero-content">
           <p class="dimension-line">elevenOne · seit 2016</p>
-          <h1 class="display-xl hero-headline" data-reveal-chars>KI-Transformation, <em class="hero-em">präzise konstruiert.</em></h1>
+          <h1 class="display-xl hero-headline" data-reveal-chars aria-label="KI-Transformation für KMU. ROI-getrieben, in 24 Stunden zur Maßnahmen-Liste.">KI-Transformation für KMU. <em class="hero-em">ROI-getrieben, in 24 Stunden zur Maßnahmen-Liste.</em></h1>
+          <p class="trust-stamp" aria-label="Zehn Jahre elevenOne, KI-Master 2026, Standort Steiermark">├─ 10 JAHRE ELEVENONE  ·  KI-MASTER 2026  ·  STEIERMARK ─┤</p>
           <p class="hero-lede">Strategie, Umsetzung und Change Management für KMU — nach dem AI PCP-Engineering™-Prinzip. Aufgesetzt auf 20+ Jahre Transformations-Erfahrung.</p>
           <div class="hero-cta">
             <a href="#produkte" class="btn btn-primary">Produkte ansehen</a>
-            <a href="/kontakt.html" class="btn btn-ghost" data-track="hero_contact">Termin anfragen <span class="btn-arrow">→</span></a>
+            <a href="/kontakt" class="btn btn-ghost" data-track="hero_contact">Termin anfragen <span class="btn-arrow">→</span></a>
           </div>
         </div>
         <figure class="hero-canvas-wrap">
@@ -149,17 +199,17 @@
             </div>
             <span class="label-mono">PRODUKT 01</span>
             <h3 class="display-md">KI-Checkup</h3>
-            <p class="widget-lede">Status quo, Selbst­reflektion und klassifizierte Maßnahmen — in unter 24 Stunden.</p>
+            <p class="widget-lede">Status quo, Selbst­reflexion und klassifizierte Maßnahmen — in unter 24 Stunden.</p>
           </header>
           <button class="product-widget-toggle" type="button" aria-expanded="false" aria-controls="pw-1" data-track="p1_toggle">
             <span>Leistungen anzeigen</span><span class="chevron" aria-hidden="true">+</span>
           </button>
           <div class="product-widget-body" id="pw-1" hidden>
             <ul class="product-bullets">
-              <li><strong>KI-Checkup anfordern</strong> — Status-quo-Audit, Selbst­reflektion-Workshop, klassifizierte Maßnahmen-Liste für künftige Abweichungs­analyse.</li>
+              <li><strong>KI-Checkup anfordern</strong> — Status-quo-Audit, Selbst­reflexion-Workshop, klassifizierte Maßnahmen-Liste für künftige Abweichungs­analyse.</li>
               <li><strong>KI-Finanzreport anfordern</strong> — Finanzanalyse aus 3–5 Jahren anonymisierter Saldenlisten, monatliche Abweichungs­analyse, KPI-Erstellung, Prognose mit Wachstums­pfad.</li>
             </ul>
-            <a href="/leistungen/ki-checkup.html" class="btn btn-secondary btn-sm" data-track="p1_detail">Mehr erfahren →</a>
+            <a href="/leistungen/ki-checkup" class="btn btn-secondary btn-sm" data-track="p1_detail">Mehr erfahren →</a>
           </div>
         </article>
 
@@ -184,7 +234,7 @@
               <li><strong>KI-Pilotprojekt</strong> — gemeinsame Umsetzung des ersten Use-Cases.</li>
               <li><strong>KI-Kernteam-Support</strong> — laufende Begleitung nach Go-Live.</li>
             </ul>
-            <a href="/leistungen/start-projekt.html" class="btn btn-secondary btn-sm" data-track="p2_detail">Mehr erfahren →</a>
+            <a href="/leistungen/start-projekt" class="btn btn-secondary btn-sm" data-track="p2_detail">Mehr erfahren →</a>
           </div>
         </article>
 
@@ -211,7 +261,7 @@
               <li><strong>Aufbau des firmeneigenen KI-Teams</strong>.</li>
               <li><strong>Aktive Unternehmens­transformation</strong> mit Monitoring und Reporting.</li>
             </ul>
-            <a href="/leistungen/ki-roadmap-projekt.html" class="btn btn-secondary btn-sm" data-track="p3_detail">Mehr erfahren →</a>
+            <a href="/leistungen/ki-roadmap-projekt" class="btn btn-secondary btn-sm" data-track="p3_detail">Mehr erfahren →</a>
           </div>
         </article>
 
@@ -219,7 +269,7 @@
     </section>
 
     <!-- ═══ § 03 / 06 — AI PCP-ENGINEERING ═══════════════════ -->
-    <section class="section pcp-section">
+    <section class="section pcp-section" id="pcp">
       <header class="section-head">
         <span class="section-mark">03 / 06 — METHODIK</span>
         <h2 class="display-lg">AI PCP-Engineering™</h2>
@@ -228,9 +278,13 @@
 
       <div class="pcp-stage">
         <figure class="pcp-figure">
-          <img src="/assets/img/pcp-triangle.png"
-               alt="AI PCP-Engineering Triangle — Skizze mit P (Process oben), C (Cost links unten), P (Performance rechts unten) und ENGINEERING-Beschriftung"
-               class="pcp-triangle-img">
+          <picture>
+            <source srcset="/assets/img/pcp-triangle.webp" type="image/webp">
+            <img src="/assets/img/pcp-triangle.png"
+                 alt="AI PCP-Engineering Triangle — Skizze mit P (Process oben), C (Cost links unten), P (Performance rechts unten) und ENGINEERING-Beschriftung"
+                 class="pcp-triangle-img"
+                 width="1118" height="944" loading="lazy" decoding="async">
+          </picture>
           <figcaption class="label-mono pcp-fig-cap">FIG.02 — METHODEN-TRIANGLE</figcaption>
         </figure>
 
@@ -251,14 +305,14 @@
             <p>Maximierung von Produktnutzen und Langlebigkeit. KI-Integration als Performance-Multiplikator, nicht als Selbstzweck.</p>
           </div>
           <p class="pcp-cta">
-            <a href="/projektmanagement/pcp-engineering.html" class="btn btn-secondary btn-sm" data-track="pcp_detail">Methodik im Detail →</a>
+            <a href="/projektmanagement/pcp-engineering" class="btn btn-secondary btn-sm" data-track="pcp_detail">Methodik im Detail →</a>
           </p>
         </div>
       </div>
     </section>
 
     <!-- ═══ § 04 / 06 — SIX STEPS (Teaser) ══════════════════ -->
-    <section class="section steps-section">
+    <section class="section steps-section" id="six-steps">
       <header class="section-head">
         <span class="section-mark">04 / 06 — PROJEKTMANAGEMENT-MODELL</span>
         <h2 class="display-lg">Six Steps to Success</h2>
@@ -266,26 +320,26 @@
       </header>
 
       <ol class="steps-track" data-steps-placeholder>
-        <li class="step"><span class="step-num">01</span><h4>Projekt-Setup</h4><p>Ziele · Organisation · Pläne</p></li>
+        <li class="step"><span class="step-num">01</span><h3>Projekt-Setup</h3><p>Ziele · Organisation · Pläne</p></li>
         <li class="gate" aria-hidden="true">▸</li>
-        <li class="step"><span class="step-num">02</span><h4>Detailanalyse</h4><p>Prozesse · Business · Change · IT-Gaps</p></li>
+        <li class="step"><span class="step-num">02</span><h3>Detailanalyse</h3><p>Prozesse · Business · Change · IT-Gaps</p></li>
         <li class="gate" aria-hidden="true">▸</li>
-        <li class="step"><span class="step-num">03</span><h4>Change</h4><p>Prozesse · Drittanbieter · Stammdaten</p></li>
+        <li class="step"><span class="step-num">03</span><h3>Change</h3><p>Prozesse · Drittanbieter · Stammdaten</p></li>
         <li class="gate" aria-hidden="true">▸</li>
-        <li class="step"><span class="step-num">04</span><h4>Test &amp; Training</h4><p>Wissens­transfer · UAT · Pilot</p></li>
+        <li class="step"><span class="step-num">04</span><h3>Test &amp; Training</h3><p>Wissens­transfer · UAT · Pilot</p></li>
         <li class="gate" aria-hidden="true">▸</li>
-        <li class="step"><span class="step-num">05</span><h4>Rollout</h4><p>Go-Live · Onsite · Risiko-Monitoring</p></li>
+        <li class="step"><span class="step-num">05</span><h3>Rollout</h3><p>Go-Live · Onsite · Risiko-Monitoring</p></li>
         <li class="gate" aria-hidden="true">▸</li>
-        <li class="step"><span class="step-num">06</span><h4>Stabilisierung</h4><p>Übergabe · Support · Wissens­mgmt</p></li>
+        <li class="step"><span class="step-num">06</span><h3>Stabilisierung</h3><p>Übergabe · Support · Wissens­mgmt</p></li>
       </ol>
 
       <p class="steps-cta">
-        <a href="/projektmanagement/six-steps.html" class="btn btn-secondary btn-sm" data-track="steps_detail">Six Steps im Detail →</a>
+        <a href="/projektmanagement/six-steps" class="btn btn-secondary btn-sm" data-track="steps_detail">Six Steps im Detail →</a>
       </p>
     </section>
 
     <!-- ═══ § 05 / 06 — ROADMAP (Teaser) ════════════════════ -->
-    <section class="section roadmap-teaser">
+    <section class="section roadmap-teaser" id="roadmap">
       <header class="section-head">
         <span class="section-mark">05 / 06 — ROADMAP · 10 JAHRE</span>
         <h2 class="display-lg">Von TMS zur KI-Transformation</h2>
@@ -300,7 +354,7 @@
         <li class="active"><span class="pill-year">2026</span><span class="pill-label">KI-Master · Redesign</span></li>
       </ul>
       <p class="roadmap-cta">
-        <a href="/unternehmen/roadmap.html" class="btn btn-secondary btn-sm" data-track="roadmap_detail">Vollständige Roadmap →</a>
+        <a href="/unternehmen/roadmap" class="btn btn-secondary btn-sm" data-track="roadmap_detail">Vollständige Roadmap →</a>
       </p>
     </section>
 
@@ -315,7 +369,7 @@
       </ul>
     </section>
 
-    <section class="cta-banner">
+    <section class="cta-banner" id="cta">
       <h2 class="display-lg">Bereit für die KI-Transformation?</h2>
       <p class="cta-lede">Vereinbaren Sie ein unverbindliches Erstgespräch. Innerhalb von 24 Stunden Antwort.</p>
       <a href="mailto:info@elevenone.at?subject=Erstgespr%C3%A4ch%20elevenOne&body=Guten%20Tag%20Herr%20Hermann%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20ein%20Erstgespr%C3%A4ch%20zum%20Thema%20KI-Transformation.%0A%0AMeine%20Firma%3A%20%0AMein%20Anliegen%3A%20%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen"
@@ -327,38 +381,38 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="footer-mark">
+        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="footer-mark" width="120" height="100" loading="lazy" decoding="async">
         <p>KI-Beratung &amp; KI-Agentur<br>Österreich · seit 2016</p>
       </div>
       <nav class="footer-nav" aria-label="Footer-Navigation">
         <div>
-          <h5>Unternehmen</h5>
+          <h2>Unternehmen</h2>
           <ul>
-            <li><a href="/unternehmen/ueber-uns.html">Wir über uns</a></li>
-            <li><a href="/unternehmen/roadmap.html">Roadmap</a></li>
-            <li><a href="/kontakt.html">Kontakt</a></li>
+            <li><a href="/unternehmen/ueber-uns">Wir über uns</a></li>
+            <li><a href="/unternehmen/roadmap">Roadmap</a></li>
+            <li><a href="/kontakt">Kontakt</a></li>
           </ul>
         </div>
         <div>
-          <h5>Leistungen</h5>
+          <h2>Leistungen</h2>
           <ul>
-            <li><a href="/leistungen/ki-checkup.html">KI-Checkup</a></li>
-            <li><a href="/leistungen/start-projekt.html">Start-Projekt</a></li>
-            <li><a href="/leistungen/ki-roadmap-projekt.html">KI-Roadmap-Projekt</a></li>
+            <li><a href="/leistungen/ki-checkup">KI-Checkup</a></li>
+            <li><a href="/leistungen/start-projekt">Start-Projekt</a></li>
+            <li><a href="/leistungen/ki-roadmap-projekt">KI-Roadmap-Projekt</a></li>
           </ul>
         </div>
         <div>
-          <h5>Methodik</h5>
+          <h2>Methodik</h2>
           <ul>
-            <li><a href="/projektmanagement/six-steps.html">Six Steps</a></li>
-            <li><a href="/projektmanagement/pcp-engineering.html">AI PCP-Engineering™</a></li>
+            <li><a href="/projektmanagement/six-steps">Six Steps</a></li>
+            <li><a href="/projektmanagement/pcp-engineering">AI PCP-Engineering™</a></li>
           </ul>
         </div>
         <div>
-          <h5>Recht</h5>
+          <h2>Recht</h2>
           <ul>
-            <li><a href="/recht/impressum.html">Impressum</a></li>
-            <li><a href="/recht/datenschutz.html">Datenschutz</a></li>
+            <li><a href="/recht/impressum">Impressum</a></li>
+            <li><a href="/recht/datenschutz">Datenschutz</a></li>
             <li><a href="#" data-consent-reopen>Cookie-Einstellungen</a></li>
           </ul>
         </div>
@@ -373,10 +427,10 @@
   </footer>
 
   <!-- ══ Scripts ═════════════════════════════════════════ -->
-  <script src="/assets/js/consent.js"></script>
-  <script src="/assets/js/app.js"></script>
-  <script src="/assets/js/widget-disclosure.js"></script>
-  <script src="/assets/js/hero-canvas.js"></script>
-  <script src="/assets/js/pcp-svg.js"></script>
+  <script src="/assets/js/consent.js?v=20260512"></script>
+  <script src="/assets/js/app.js?v=20260512"></script>
+  <script src="/assets/js/widget-disclosure.js?v=20260512"></script>
+  <script src="/assets/js/hero-canvas.js?v=20260512"></script>
+  <script src="/assets/js/pcp-svg.js?v=20260512"></script>
 </body>
 </html>

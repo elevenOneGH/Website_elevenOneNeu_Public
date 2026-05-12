@@ -4,22 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seite nicht gefunden — elevenOne</title>
-  <meta name="description" content="Diese Seite existiert nicht.">
+  <meta name="description" content="Diese Seite existiert nicht oder wurde verschoben. Wechseln Sie zur Startseite, zu den Leistungen oder direkt zum Kontaktformular.">
   <meta name="theme-color" content="#0A0806">
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://elevenone.at/404.html">
+  <link rel="canonical" href="https://elevenone.at/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Seite nicht gefunden — elevenOne">
-  <meta property="og:description" content="Diese Seite existiert nicht.">
+  <meta property="og:description" content="Diese Seite existiert nicht oder wurde verschoben. Wechseln Sie zur Startseite, zu den Leistungen oder direkt zum Kontaktformular.">
   <meta property="og:image" content="https://elevenone.at/assets/img/og-cover.jpg">
-  <meta property="og:url" content="https://elevenone.at/404.html">
+  <meta property="og:image:alt" content="elevenOne GmbH, KI-Beratung und KI-Agentur Österreich">
+  <meta property="og:url" content="https://elevenone.at/">
   <meta property="og:locale" content="de_AT">
+  <meta property="og:site_name" content="elevenOne GmbH">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Seite nicht gefunden — elevenOne">
+  <meta name="twitter:description" content="Diese Seite existiert nicht oder wurde verschoben. Wechseln Sie zur Startseite, zu den Leistungen oder direkt zum Kontaktformular.">
+  <meta name="twitter:image" content="https://elevenone.at/assets/img/og-cover.jpg">
+  <meta name="twitter:image:alt" content="elevenOne GmbH, KI-Beratung Österreich">
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/logo-mark.png" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/img/logo-mark.png">
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260512">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260512">
+  <link rel="stylesheet" href="/assets/css/site.css?v=20260512">
   
 </head>
 <body>
@@ -27,10 +34,23 @@
 
   <aside class="consent-banner" data-consent-banner hidden>
     <div class="consent-inner">
-      <p class="consent-text"><strong>Ihre Privatsphäre</strong> &nbsp;·&nbsp; Wir verwenden ausschließlich technisch notwendige Cookies. Optional können Sie Reichweiten-Messung (Google Ads) zustimmen. Mehr in der <a href="/recht/datenschutz.html">Datenschutzerklärung</a>.</p>
+      <p class="consent-text"><strong>Ihre Privatsphäre</strong> &nbsp;·&nbsp; Wir verwenden ausschließlich technisch notwendige Cookies. Optional können Sie Reichweiten-Messung (Google Ads) zustimmen. Mehr in der <a href="/recht/datenschutz">Datenschutzerklärung</a>.</p>
+      <div class="consent-categories">
+        <label class="consent-toggle consent-toggle-disabled">
+          <span class="consent-toggle-label label-mono">NOTWENDIG</span>
+          <input type="checkbox" checked disabled aria-label="Notwendige Cookies, immer aktiv">
+          <span class="consent-toggle-hint">Immer aktiv</span>
+        </label>
+        <label class="consent-toggle">
+          <span class="consent-toggle-label label-mono">ANALYTICS</span>
+          <input type="checkbox" id="consent-analytics" aria-label="Google Ads Conversion-Tracking erlauben">
+          <span class="consent-toggle-hint">Google Ads</span>
+        </label>
+      </div>
       <div class="consent-actions">
-        <button type="button" class="btn btn-ghost btn-sm" data-consent-action="decline">Ablehnen</button>
-        <button type="button" class="btn btn-primary btn-sm" data-consent-action="accept">Akzeptieren</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-consent-action="decline">Nur notwendige</button>
+        <button type="button" class="btn btn-ghost btn-sm" data-consent-action="accept">Auswahl erlauben</button>
+        <button type="button" class="btn btn-primary btn-sm" data-consent-action="accept-all">Alle akzeptieren</button>
       </div>
     </div>
   </aside>
@@ -38,34 +58,34 @@
   <header class="site-header" data-header>
     <div class="site-header-inner">
       <a href="/" class="brand" aria-label="elevenOne — Startseite">
-        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="brand-mark">
+        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="brand-mark" width="120" height="100" loading="eager" decoding="async">
       </a>
       <nav class="site-nav" data-nav aria-label="Hauptnavigation">
         <ul class="nav-list">
           <li class="nav-item has-sub">
             <button type="button" class="nav-trigger" aria-expanded="false">Unternehmen<span aria-hidden="true">▾</span></button>
             <ul class="nav-sub">
-              <li><a href="/unternehmen/ueber-uns.html">Wir über uns</a></li>
-              <li><a href="/unternehmen/roadmap.html">Roadmap</a></li>
+              <li><a href="/unternehmen/ueber-uns">Wir über uns</a></li>
+              <li><a href="/unternehmen/roadmap">Roadmap</a></li>
             </ul>
           </li>
           <li class="nav-item has-sub">
             <button type="button" class="nav-trigger" aria-expanded="false">KI-Beratung &amp; Agentur<span aria-hidden="true">▾</span></button>
             <ul class="nav-sub">
-              <li><a href="/leistungen/ki-checkup.html">KI-Checkup</a></li>
-              <li><a href="/leistungen/start-projekt.html">Start-Projekt</a></li>
-              <li><a href="/leistungen/ki-roadmap-projekt.html">KI-Roadmap-Projekt</a></li>
+              <li><a href="/leistungen/ki-checkup">KI-Checkup</a></li>
+              <li><a href="/leistungen/start-projekt">Start-Projekt</a></li>
+              <li><a href="/leistungen/ki-roadmap-projekt">KI-Roadmap-Projekt</a></li>
               <li><a href="/leistungen/" class="nav-sub-all">Übersicht →</a></li>
             </ul>
           </li>
           <li class="nav-item has-sub">
             <button type="button" class="nav-trigger" aria-expanded="false">elevenOne Projektmanagement-Modell<span aria-hidden="true">▾</span></button>
             <ul class="nav-sub">
-              <li><a href="/projektmanagement/six-steps.html">Six Steps to Success</a></li>
-              <li><a href="/projektmanagement/pcp-engineering.html">AI PCP-Engineering™</a></li>
+              <li><a href="/projektmanagement/six-steps">Six Steps to Success</a></li>
+              <li><a href="/projektmanagement/pcp-engineering">AI PCP-Engineering™</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a href="/kontakt.html" class="nav-link nav-cta">Kontakt</a></li>
+          <li class="nav-item"><a href="/kontakt" class="nav-link nav-cta">Kontakt</a></li>
         </ul>
       </nav>
       <button type="button" class="nav-hamburger" data-nav-toggle aria-expanded="false" aria-label="Menü öffnen">
@@ -81,13 +101,13 @@
       <p class="page-lede">Die angefragte Seite existiert nicht — oder nicht mehr. Sie können von hier aus weiternavigieren.</p>
       <div class="error-actions">
         <a href="/" class="btn btn-primary">Zur Startseite →</a>
-        <a href="/kontakt.html" class="btn btn-ghost" data-track="404_contact">Kontakt aufnehmen →</a>
+        <a href="/kontakt" class="btn btn-ghost" data-track="404_contact">Kontakt aufnehmen →</a>
       </div>
       <ul class="error-quicklinks">
         <li><a href="/leistungen/">Leistungen</a></li>
-        <li><a href="/unternehmen/ueber-uns.html">Wir über uns</a></li>
-        <li><a href="/unternehmen/roadmap.html">Roadmap</a></li>
-        <li><a href="/projektmanagement/pcp-engineering.html">AI PCP-Engineering™</a></li>
+        <li><a href="/unternehmen/ueber-uns">Wir über uns</a></li>
+        <li><a href="/unternehmen/roadmap">Roadmap</a></li>
+        <li><a href="/projektmanagement/pcp-engineering">AI PCP-Engineering™</a></li>
       </ul>
     </article>
 
@@ -96,28 +116,28 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="footer-mark">
+        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="footer-mark" width="120" height="100" loading="lazy" decoding="async">
         <p>KI-Beratung &amp; KI-Agentur<br>Österreich · seit 2016</p>
       </div>
       <nav class="footer-nav" aria-label="Footer-Navigation">
-        <div><h5>Unternehmen</h5><ul>
-          <li><a href="/unternehmen/ueber-uns.html">Wir über uns</a></li>
-          <li><a href="/unternehmen/roadmap.html">Roadmap</a></li>
-          <li><a href="/kontakt.html">Kontakt</a></li>
+        <div><h2>Unternehmen</h2><ul>
+          <li><a href="/unternehmen/ueber-uns">Wir über uns</a></li>
+          <li><a href="/unternehmen/roadmap">Roadmap</a></li>
+          <li><a href="/kontakt">Kontakt</a></li>
         </ul></div>
-        <div><h5>Leistungen</h5><ul>
-          <li><a href="/leistungen/ki-checkup.html">KI-Checkup</a></li>
-          <li><a href="/leistungen/start-projekt.html">Start-Projekt</a></li>
-          <li><a href="/leistungen/ki-roadmap-projekt.html">KI-Roadmap-Projekt</a></li>
+        <div><h2>Leistungen</h2><ul>
+          <li><a href="/leistungen/ki-checkup">KI-Checkup</a></li>
+          <li><a href="/leistungen/start-projekt">Start-Projekt</a></li>
+          <li><a href="/leistungen/ki-roadmap-projekt">KI-Roadmap-Projekt</a></li>
         </ul></div>
-        <div><h5>Methodik</h5><ul>
-          <li><a href="/projektmanagement/six-steps.html">Six Steps</a></li>
-          <li><a href="/projektmanagement/pcp-engineering.html">AI PCP-Engineering™</a></li>
+        <div><h2>Methodik</h2><ul>
+          <li><a href="/projektmanagement/six-steps">Six Steps</a></li>
+          <li><a href="/projektmanagement/pcp-engineering">AI PCP-Engineering™</a></li>
         </ul></div>
-        <div><h5>Recht</h5><ul>
-          <li><a href="/recht/impressum.html">Impressum</a></li>
-          <li><a href="/recht/datenschutz.html">Datenschutz</a></li>
-          <li><a href="#" data-consent-reopen>Cookie-Einstellungen</a></li>
+        <div><h2>Recht</h2><ul>
+          <li><a href="/recht/impressum">Impressum</a></li>
+          <li><a href="/recht/datenschutz">Datenschutz</a></li>
+          <li><a href="/recht/datenschutz#cookies" data-consent-reopen>Cookie-Einstellungen</a></li>
         </ul></div>
       </nav>
     </div>
@@ -127,8 +147,8 @@
     </div>
   </footer>
 
-  <script src="/assets/js/consent.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/consent.js?v=20260512"></script>
+  <script src="/assets/js/app.js?v=20260512"></script>
   
 </body>
 </html>
