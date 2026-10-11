@@ -7,6 +7,10 @@
   'use strict';
 
   document.querySelectorAll('.product-widget-toggle').forEach(btn => {
+    // Details erst per JS einklappen → ohne JavaScript bleiben sie lesbar
+    const target = document.getElementById(btn.getAttribute('aria-controls'));
+    if (target && btn.getAttribute('aria-expanded') !== 'true') target.hidden = true;
+    btn.hidden = false;
     btn.addEventListener('click', () => {
       const id = btn.getAttribute('aria-controls');
       const body = id ? document.getElementById(id) : btn.nextElementSibling;

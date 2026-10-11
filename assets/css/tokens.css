@@ -31,31 +31,60 @@
   font-weight: 500; font-style: normal; font-display: swap;
 }
 
-/* ── Token-Override (CD + Bridge auf DemoServices-Schema) ─── */
-:root {
-  /* === elevenOne Corporate Design === */
+/* ── Token-Override (CD + Bridge auf DemoServices-Schema) ───
+   Zwei Themes: HELL ist Standard (:root), DUNKEL via <html data-theme="dark">.
+   Die Rollen-Tokens tragen historische Namen aus dem Dark-Design:
+     --ink      = Seitenhintergrund        --bone  = Text primär
+     --carbon   = Karten/Flächen           --ash   = Text sekundär
+     --graphite = hervorgehobene Flächen   --slate = Text gedämpft
+   Komponenten nutzen nur diese Rollen → das Theme wechselt zentral hier.
+   Selektor html:root (statt :root): höhere Spezifität, damit die DemoServices-
+   Defaults im später geladenen style.css (:root) diese Tokens NICHT überschreiben. */
+html:root {
+  color-scheme: light;
+
+  /* === elevenOne Corporate Design (themenunabhängig) === */
   --copper-500: #A84221;
   --copper-400: #C7593A;
   --copper-600: #8A3318;
-  --copper-glow: rgba(168, 66, 33, 0.18);
+  --copper-glow: rgba(168, 66, 33, 0.14);
 
-  --ink:        #0A0806;
-  --carbon:     #1A1410;
-  --graphite:   #2A2218;
-  --slate:      #564A3A;
-  --bone:       #E8E0D2;
-  --ash:        #9A8E7A;
+  /* === Rollen HELL (CD: Paper & Ink) === */
+  --ink:        #FFFDFA;   /* Paper */
+  --carbon:     #FFFFFF;   /* Karten */
+  --graphite:   #F6F0E5;   /* Paper-2 */
+  --slate:      #6B5F4F;   /* gedämpft, ≥ 4.5 : 1 auf Paper */
+  --bone:       #0A0806;   /* Ink */
+  --ash:        #564A3A;   /* Ink-3 */
+  --ink-3:      #564A3A;
 
-  /* Echter zweiter Akzent für „live/aktiv/Status" */
-  --bronze-500: #D4A040;
-  --bronze-400: #E0B25C;
-  --bronze-glow: rgba(212, 160, 64, 0.18);
+  /* Zweitakzent: auf Paper dunkles Gold (Bronze wäre zu kontrastarm) */
+  --bronze-500: #8C5E0F;
+  --bronze-400: #A87318;
+  --bronze-glow: rgba(140, 94, 15, 0.14);
+
+  --bg-overlay:     rgba(255, 253, 250, 0.94);
+  --border-cyan:    rgba(140, 94, 15, 0.30);
+  --accent-red:     #C62828;
+
+  --border-subtle:      rgba(168, 66, 33, 0.16);
+  --border-default:     rgba(168, 66, 33, 0.28);
+  --border-active:      rgba(168, 66, 33, 0.55);
+  --border-hairline:    rgba(168, 66, 33, 0.40);
+
+  /* Theme-abhängige Sonderfälle */
+  --shadow-card:   0 1px 2px rgba(20, 16, 11, 0.06), 0 6px 18px rgba(20, 16, 11, 0.06);
+  --shadow-float:  0 12px 28px rgba(20, 16, 11, 0.14), 0 4px 10px rgba(20, 16, 11, 0.08);
+  --shadow-banner: 0 -6px 24px rgba(20, 16, 11, 0.10);
+  --pcp-bg:        #FFFFFF;
+  --pcp-filter:    none;
+  --logo-light-display: block;
+  --logo-dark-display:  none;
 
   /* === Bridge-Aliase auf DemoServices-Schema === */
   --bg-void:        var(--ink);
   --bg-surface:     var(--carbon);
   --bg-elevated:    var(--graphite);
-  --bg-overlay:     rgba(10, 8, 6, 0.92);
 
   --accent-gold:        var(--copper-500);
   --accent-gold-dim:    var(--copper-600);
@@ -65,28 +94,57 @@
   --accent-cyan:        var(--bronze-500);
   --accent-cyan-dim:    var(--bronze-400);
   --accent-cyan-glow:   var(--bronze-glow);
-  --border-cyan:        rgba(212, 160, 64, 0.30);
 
   --accent-amber:       var(--bronze-500);
   --accent-amber-glow:  var(--bronze-glow);
-  --accent-red:         #C44141;
 
   --text-primary:       var(--bone);
   --text-secondary:     var(--ash);
   --text-muted:         var(--slate);
   --text-accent:        var(--copper-500);
-
-  --border-subtle:      rgba(168, 66, 33, 0.10);
-  --border-default:     rgba(168, 66, 33, 0.22);
-  --border-active:      rgba(168, 66, 33, 0.55);
-  --border-hairline:    rgba(168, 66, 33, 0.65);
-
   /* Fonts: Manrope für Display+Body, IBM Plex Mono für technische Labels */
   --font-display: 'Manrope', system-ui, sans-serif;
   --font-mono:    'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
   --font-body:    'Manrope', system-ui, sans-serif;
 }
 
+/* ── Theme DUNKEL (bisheriges Design, per Umschalter) ────── */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  /* Kupfer auf Ink nur ~3,3 : 1 → im Dunkel-Theme helleres Kupfer (≥ 4,9 : 1 auch auf Graphite) */
+  --copper-500: #E0794A;
+  --copper-400: #EB8F62;
+  --copper-glow: rgba(224, 121, 74, 0.18);
+
+  --ink:        #0A0806;
+  --carbon:     #1A1410;
+  --graphite:   #2A2218;
+  --slate:      #A39580;   /* gedämpft, ≥ 4,5 : 1 auch auf Graphite (vorher #564A3A ≈ 2 : 1) */
+  --bone:       #E8E0D2;
+  --ash:        #9A8E7A;
+  --ink-3:      #9A8E7A;
+
+  --bronze-500: #D4A040;
+  --bronze-400: #E0B25C;
+  --bronze-glow: rgba(212, 160, 64, 0.18);
+
+  --bg-overlay:     rgba(10, 8, 6, 0.92);
+  --border-cyan:    rgba(212, 160, 64, 0.30);
+  --accent-red:     #C44141;
+
+  --border-subtle:      rgba(168, 66, 33, 0.10);
+  --border-default:     rgba(168, 66, 33, 0.22);
+  --border-active:      rgba(168, 66, 33, 0.55);
+  --border-hairline:    rgba(168, 66, 33, 0.65);
+
+  --shadow-card:   none;
+  --shadow-float:  0 24px 48px rgba(0, 0, 0, 0.4);
+  --shadow-banner: 0 -10px 40px rgba(0, 0, 0, 0.5);
+  --pcp-bg:        #000;
+  --pcp-filter:    invert(1) contrast(1.08);
+  --logo-light-display: none;
+  --logo-dark-display:  block;
+}
 /* ── Body-Override: Manrope statt Fraunces, weight 400 ──── */
 body {
   font-family: var(--font-body);

@@ -3,54 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt — elevenOne GmbH</title>
-  <meta name="description" content="Termin für ein Erstgespräch zur KI-Transformation. Wir antworten innerhalb von 24 Stunden mit konkreten Terminvorschlägen.">
-  <meta name="theme-color" content="#0A0806">
+  <title>Kontakt & Erstgespräch KI-Beratung | elevenOne</title>
+  <meta name="description" content="Kostenloses Erstgespräch zur KI-Einführung: 30 Minuten per Videokonferenz. Wir antworten an Werktagen innerhalb von 24 Stunden mit Terminvorschlägen.">
+  <meta name="theme-color" content="#FFFDFA">
+  <script>try{if(localStorage.getItem('e1-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://elevenone.at/kontakt">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Kontakt — elevenOne GmbH">
-  <meta property="og:description" content="Termin für ein Erstgespräch zur KI-Transformation. Wir antworten innerhalb von 24 Stunden mit konkreten Terminvorschlägen.">
+  <meta property="og:title" content="Kontakt & Erstgespräch KI-Beratung | elevenOne">
+  <meta property="og:description" content="Kostenloses Erstgespräch zur KI-Einführung: 30 Minuten per Videokonferenz. Wir antworten an Werktagen innerhalb von 24 Stunden mit Terminvorschlägen.">
   <meta property="og:image" content="https://elevenone.at/assets/img/og-cover.jpg">
   <meta property="og:image:alt" content="elevenOne GmbH, KI-Beratung und KI-Agentur Österreich">
   <meta property="og:url" content="https://elevenone.at/kontakt">
   <meta property="og:locale" content="de_AT">
   <meta property="og:site_name" content="elevenOne GmbH">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kontakt — elevenOne GmbH">
-  <meta name="twitter:description" content="Termin für ein Erstgespräch zur KI-Transformation. Wir antworten innerhalb von 24 Stunden mit konkreten Terminvorschlägen.">
+  <meta name="twitter:title" content="Kontakt & Erstgespräch KI-Beratung | elevenOne">
+  <meta name="twitter:description" content="Kostenloses Erstgespräch zur KI-Einführung: 30 Minuten per Videokonferenz. Wir antworten an Werktagen innerhalb von 24 Stunden mit Terminvorschlägen.">
   <meta name="twitter:image" content="https://elevenone.at/assets/img/og-cover.jpg">
   <meta name="twitter:image:alt" content="elevenOne GmbH, KI-Beratung Österreich">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/logo-mark.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260512">
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260512">
-  <link rel="stylesheet" href="/assets/css/site.css?v=20260512">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"elevenOne","item":"https://elevenone.at/"},{"@type":"ListItem","position":2,"name":"Kontakt","item":"https://elevenone.at/kontakt.html"}]}</script>
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20261011b">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261011b">
+  <link rel="stylesheet" href="/assets/css/site.css?v=20261011b">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"elevenOne","item":"https://elevenone.at/"},{"@type":"ListItem","position":2,"name":"Kontakt","item":"https://elevenone.at/kontakt"}]}</script>
 </head>
 <body>
+  <canvas id="dotCanvas" aria-hidden="true"></canvas>
   <a href="#main" class="skip-link">Zum Inhalt</a>
 
-  <aside class="consent-banner" data-consent-banner hidden>
+  <aside class="consent-banner" data-consent-banner aria-label="Datenschutz-Einstellungen" tabindex="-1" hidden>
     <div class="consent-inner">
-      <p class="consent-text"><strong>Ihre Privatsphäre</strong> &nbsp;·&nbsp; Wir verwenden ausschließlich technisch notwendige Cookies. Optional können Sie Reichweiten-Messung (Google Ads) zustimmen. Mehr in der <a href="/recht/datenschutz">Datenschutzerklärung</a>.</p>
+      <p class="consent-text"><strong>Ihre Privatsphäre</strong> &nbsp;·&nbsp; Ohne Ihre Zustimmung setzt diese Website keine Cookies. Ihre Einstellungen (z.&nbsp;B. Hell/Dunkel) bleiben nur in Ihrem Browser gespeichert. Optional können Sie der Erfolgsmessung von Werbeanzeigen (Google Ads) zustimmen. Mehr in der <a href="/recht/datenschutz#cookies">Datenschutzerklärung</a>.</p>
       <div class="consent-categories">
         <label class="consent-toggle consent-toggle-disabled">
           <span class="consent-toggle-label label-mono">NOTWENDIG</span>
-          <input type="checkbox" checked disabled aria-label="Notwendige Cookies, immer aktiv">
+          <input type="checkbox" checked disabled aria-label="Notwendige Speicherung, immer aktiv">
           <span class="consent-toggle-hint">Immer aktiv</span>
         </label>
         <label class="consent-toggle">
-          <span class="consent-toggle-label label-mono">ANALYTICS</span>
-          <input type="checkbox" id="consent-analytics" aria-label="Google Ads Conversion-Tracking erlauben">
+          <span class="consent-toggle-label label-mono">MARKETING</span>
+          <input type="checkbox" id="consent-analytics" aria-label="Erfolgsmessung von Google-Ads-Anzeigen erlauben">
           <span class="consent-toggle-hint">Google Ads</span>
         </label>
       </div>
       <div class="consent-actions">
-        <button type="button" class="btn btn-ghost btn-sm" data-consent-action="decline">Nur notwendige</button>
-        <button type="button" class="btn btn-ghost btn-sm" data-consent-action="accept">Auswahl erlauben</button>
-        <button type="button" class="btn btn-primary btn-sm" data-consent-action="accept-all">Alle akzeptieren</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-consent-action="decline">Nur notwendige</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-consent-action="accept">Auswahl erlauben</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-consent-action="accept-all">Alle akzeptieren</button>
       </div>
     </div>
   </aside>
@@ -58,36 +60,39 @@
   <header class="site-header" data-header>
     <div class="site-header-inner">
       <a href="/" class="brand" aria-label="elevenOne — Startseite">
-        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="brand-mark" width="120" height="100" loading="eager" decoding="async">
+        <img src="/assets/img/logo-light-alpha.webp" alt="elevenOne" class="brand-mark theme-logo-light" width="120" height="100" loading="eager" decoding="async"><img src="/assets/img/logo-dark.webp" alt="elevenOne" class="brand-mark theme-logo-dark" width="120" height="100" loading="eager" decoding="async">
       </a>
       <nav class="site-nav" data-nav aria-label="Hauptnavigation">
         <ul class="nav-list">
           <li class="nav-item has-sub">
-            <button type="button" class="nav-trigger" aria-expanded="false">Unternehmen<span aria-hidden="true">▾</span></button>
+            <button type="button" class="nav-trigger" aria-expanded="false">Leistungen<span aria-hidden="true">▾</span></button>
             <ul class="nav-sub">
-              <li><a href="/unternehmen/ueber-uns">Wir über uns</a></li>
-              <li><a href="/unternehmen/roadmap">Roadmap</a></li>
+              <li><a href="/leistungen/">Pakete im Überblick</a></li>
+              <li><a href="/branchen/industrie-produktion">KI für Industrie &amp; Produktion</a></li>
+              <li><a href="/branchen/bau">KI am Bau</a></li>
             </ul>
           </li>
+          <li class="nav-item"><a href="/fuer-wen" class="nav-link nav-link-plain">Für wen</a></li>
           <li class="nav-item has-sub">
-            <button type="button" class="nav-trigger" aria-expanded="false">KI-Beratung &amp; Agentur<span aria-hidden="true">▾</span></button>
-            <ul class="nav-sub">
-              <li><a href="/leistungen/ki-checkup">KI-Checkup</a></li>
-              <li><a href="/leistungen/start-projekt">Start-Projekt</a></li>
-              <li><a href="/leistungen/ki-roadmap-projekt">KI-Roadmap-Projekt</a></li>
-              <li><a href="/leistungen/" class="nav-sub-all">Übersicht →</a></li>
-            </ul>
-          </li>
-          <li class="nav-item has-sub">
-            <button type="button" class="nav-trigger" aria-expanded="false">elevenOne Projektmanagement-Modell<span aria-hidden="true">▾</span></button>
+            <button type="button" class="nav-trigger" aria-expanded="false">Vorgehen<span aria-hidden="true">▾</span></button>
             <ul class="nav-sub">
               <li><a href="/projektmanagement/six-steps">Six Steps to Success</a></li>
               <li><a href="/projektmanagement/pcp-engineering">AI PCP-Engineering™</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a href="/kontakt" class="nav-link nav-cta">Kontakt</a></li>
+          <li class="nav-item has-sub">
+            <button type="button" class="nav-trigger" aria-expanded="false">Über uns<span aria-hidden="true">▾</span></button>
+            <ul class="nav-sub">
+              <li><a href="/unternehmen/ueber-uns">Wir über uns</a></li>
+              <li><a href="/warum-elevenone">Was uns unterscheidet</a></li>
+              <li><a href="/unternehmen/roadmap">Roadmap</a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-theme"><button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false"><svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span class="theme-toggle-label">Dunkel</span></button></li>
+          <li class="nav-item"><a href="/kontakt" class="nav-link nav-cta" data-track="nav_contact">Termin vereinbaren</a></li>
         </ul>
       </nav>
+      <a href="/kontakt" class="header-cta-mobile" data-track="nav_contact_mobile">Termin</a>
       <button type="button" class="nav-hamburger" data-nav-toggle aria-expanded="false" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
@@ -104,24 +109,29 @@
     <article class="contact-page">
       <span class="section-mark">KONTAKT</span>
       <h1 class="display-lg">Termin anfragen</h1>
-      <p class="page-lede">Vereinbaren Sie ein unverbindliches Erstgespräch. Wir antworten innerhalb von 24 Stunden.</p>
+      <p class="page-lede">Vereinbaren Sie ein unverbindliches Erstgespräch: 30 Minuten, kostenlos, per Videokonferenz. Wir antworten an Werktagen innerhalb von 24 Stunden.</p>
+      <div class="contact-quick">
+        <a class="btn btn-primary" href="tel:+4368184555646" data-track="contact_quick_phone">Anrufen: +43 681 84 555 646</a>
+        <a class="btn btn-secondary" href="mailto:info@elevenone.at" data-track="contact_quick_mail">E-Mail schreiben</a>
+      </div>
 
       <div class="contact-grid">
         <section class="contact-block">
           <span class="label-mono">PER E-MAIL</span>
           <h2 class="display-md">Direkter Kontakt</h2>
-          <p>Schreiben Sie uns Ihr Anliegen — Branche, Unternehmensgröße, gewünschtes Produkt (Checkup / Start-Projekt / KI-Roadmap-Projekt). Wir melden uns mit konkreten Terminvorschlägen.</p>
-          <a href="mailto:info@elevenone.at?subject=Erstgespr%C3%A4ch%20elevenOne&body=Guten%20Tag%20Herr%20Hermann%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20ein%20Erstgespr%C3%A4ch%20zum%20Thema%20KI-Transformation.%0A%0AMeine%20Firma%3A%20%0AMein%20Anliegen%3A%20%0AGew%C3%BCnschtes%20Produkt%3A%20%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen"
+          <p>Schreiben Sie uns Ihr Anliegen: Branche, kurz Ihre Ausgangslage und, falls schon klar, das gewünschte Paket (Business, Professional oder Excellence). Wir melden uns mit konkreten Terminvorschlägen.</p>
+          <a href="mailto:info@elevenone.at?subject=Erstgespr%C3%A4ch%20elevenOne&body=Guten%20Tag%20Herr%20Hermann%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20ein%20Erstgespr%C3%A4ch%20zum%20Thema%20KI-Transformation.%0A%0AMeine%20Firma%3A%20%0AMein%20Anliegen%3A%20%0AGew%C3%BCnschtes%20Paket%3A%20%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen"
              class="btn btn-primary btn-lg" data-track="contact_mailto_main">info@elevenone.at →</a>
         </section>
 
         <section class="contact-block">
-          <span class="label-mono">FOUNDER</span>
+          <span class="label-mono">IHR ANSPRECHPARTNER</span>
           <h2 class="display-md">Mag. Robert Hermann</h2>
           <dl class="legal-dl">
-            <dt>Rolle</dt><dd>Geschäftsführer · Founder</dd>
+            <dt>Rolle</dt><dd>Gründer und Geschäftsführer</dd>
             <dt>Telefon</dt><dd><a href="tel:+4368184555646" data-track="contact_phone">+43 681 84 555 646</a></dd>
             <dt>E-Mail</dt><dd><a href="mailto:info@elevenone.at" data-track="contact_office">info@elevenone.at</a></dd>
+            <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/robert-hermann-27538b94" target="_blank" rel="noopener" data-track="contact_linkedin">Profil ansehen →</a></dd>
           </dl>
         </section>
 
@@ -131,23 +141,29 @@
           <p>Grillparzerstraße 20<br>
           8330 Feldbach<br>
           Steiermark · Österreich</p>
-          <p class="muted-small">Firmenbuch: FN 445803v · ZRS Graz<br>
+          <p class="muted-small">Firmenbuch: FN 445803v · Landesgericht für ZRS Graz<br>
           UID: ATU70431712</p>
         </section>
       </div>
 
       <section class="contact-cta">
-        <p class="dimension-line">Direkt loslegen?</p>
-        <h2 class="display-lg">Drei Wege in die KI-Transformation</h2>
+        <p class="dimension-line">SO LÄUFT ES AB</p>
+        <h2 class="display-lg">Vom ersten Kontakt zum Erstgespräch</h2>
+        <ol class="contact-steps">
+          <li><strong>Sie schreiben oder rufen an.</strong> Ein paar Sätze zu Branche, Ausgangslage und Anliegen genügen.</li>
+          <li><strong>Wir melden uns mit Terminvorschlägen,</strong> an Werktagen innerhalb von 24 Stunden.</li>
+          <li><strong>Im Erstgespräch klären wir unverbindlich</strong> Ausgangslage, Ziele und den größten Hebel, und ob eines der Pakete passt. Es dauert 30 Minuten, ist kostenlos und findet per Videokonferenz statt.</li>
+        </ol>
+        <p class="contact-steps-note">Die Pakete im Überblick:</p>
         <div class="contact-products">
-          <a href="/leistungen/ki-checkup" class="contact-product-link" data-track="contact_p1">
-            <span class="label-mono">PRODUKT 01 · ≤ 1 TAG</span><br>KI-Checkup →
+          <a href="/leistungen/#business" class="contact-product-link" data-track="contact_p1">
+            <span class="label-mono">STUFE 1 · 3 MONATE</span><br>Business →
           </a>
-          <a href="/leistungen/start-projekt" class="contact-product-link" data-track="contact_p2">
-            <span class="label-mono">PRODUKT 02 · TAGE — WOCHEN</span><br>Start-Projekt + Support →
+          <a href="/leistungen/#professional" class="contact-product-link" data-track="contact_p2">
+            <span class="label-mono">STUFE 2 · 6 MONATE · KERNPAKET</span><br>Professional →
           </a>
-          <a href="/leistungen/ki-roadmap-projekt" class="contact-product-link" data-track="contact_p3">
-            <span class="label-mono">PRODUKT 03 · MONATE</span><br>KI-Roadmap-Projekt →
+          <a href="/leistungen/#excellence" class="contact-product-link" data-track="contact_p3">
+            <span class="label-mono">STUFE 3 · 12 MONATE</span><br>Excellence →
           </a>
         </div>
       </section>
@@ -158,19 +174,21 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="footer-mark" width="120" height="100" loading="lazy" decoding="async">
+        <img src="/assets/img/logo-light-alpha.webp" alt="elevenOne" class="footer-mark theme-logo-light" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/logo-dark.webp" alt="elevenOne" class="footer-mark theme-logo-dark" width="120" height="100" loading="lazy" decoding="async">
         <p>KI-Beratung &amp; KI-Agentur<br>Österreich · seit 2016</p>
       </div>
       <nav class="footer-nav" aria-label="Footer-Navigation">
         <div><h2>Unternehmen</h2><ul>
           <li><a href="/unternehmen/ueber-uns">Wir über uns</a></li>
+          <li><a href="/warum-elevenone">Was uns unterscheidet</a></li>
+          <li><a href="/fuer-wen">Für wen</a></li>
           <li><a href="/unternehmen/roadmap">Roadmap</a></li>
           <li><a href="/kontakt">Kontakt</a></li>
         </ul></div>
         <div><h2>Leistungen</h2><ul>
-          <li><a href="/leistungen/ki-checkup">KI-Checkup</a></li>
-          <li><a href="/leistungen/start-projekt">Start-Projekt</a></li>
-          <li><a href="/leistungen/ki-roadmap-projekt">KI-Roadmap-Projekt</a></li>
+          <li><a href="/leistungen/">Pakete im Überblick</a></li>
+          <li><a href="/branchen/industrie-produktion">Industrie &amp; Produktion</a></li>
+          <li><a href="/branchen/bau">Bau</a></li>
         </ul></div>
         <div><h2>Methodik</h2><ul>
           <li><a href="/projektmanagement/six-steps">Six Steps</a></li>
@@ -184,13 +202,16 @@
       </nav>
     </div>
     <div class="footer-bottom">
+      <p><button type="button" class="motion-toggle" data-motion-toggle aria-pressed="false">Animationen anhalten</button></p>
       <p>&copy; 2026 elevenOne GmbH · Alle Rechte vorbehalten</p>
       <p><a href="mailto:info@elevenone.at" data-track="footer_email">info@elevenone.at</a></p>
     </div>
   </footer>
 
-  <script src="/assets/js/consent.js?v=20260512"></script>
-  <script src="/assets/js/app.js?v=20260512"></script>
+  <script src="/assets/js/consent.js?v=20261011b"></script>
+  <script src="/assets/js/app.js?v=20261011b"></script>
+  <script src="/assets/js/theme.js?v=20261011b"></script>
+  <script src="/assets/js/dots.js?v=20261011b"></script>
   
 </body>
 </html>

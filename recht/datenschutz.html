@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Datenschutzerklärung — elevenOne GmbH</title>
   <meta name="description" content="Datenschutzerklärung der elevenOne GmbH gemäß DSGVO. Informationen zu Hosting bei Hetzner, Self-hosted Fonts, Cookie-Consent und Ihren Rechten.">
-  <meta name="theme-color" content="#0A0806">
+  <meta name="theme-color" content="#FFFDFA">
+  <script>try{if(localStorage.getItem('e1-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://elevenone.at/recht/datenschutz">
   <meta property="og:type" content="website">
@@ -24,33 +25,34 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/logo-mark.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=20260512">
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260512">
-  <link rel="stylesheet" href="/assets/css/site.css?v=20260512">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"elevenOne","item":"https://elevenone.at/"},{"@type":"ListItem","position":2,"name":"Datenschutzerklärung","item":"https://elevenone.at/recht/datenschutz.html"}]}</script>
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=20261011b">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261011b">
+  <link rel="stylesheet" href="/assets/css/site.css?v=20261011b">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"elevenOne","item":"https://elevenone.at/"},{"@type":"ListItem","position":2,"name":"Datenschutzerklärung","item":"https://elevenone.at/recht/datenschutz"}]}</script>
 </head>
 <body>
+  <canvas id="dotCanvas" aria-hidden="true"></canvas>
   <a href="#main" class="skip-link">Zum Inhalt</a>
 
-  <aside class="consent-banner" data-consent-banner hidden>
+  <aside class="consent-banner" data-consent-banner aria-label="Datenschutz-Einstellungen" tabindex="-1" hidden>
     <div class="consent-inner">
-      <p class="consent-text"><strong>Ihre Privatsphäre</strong> &nbsp;·&nbsp; Wir verwenden ausschließlich technisch notwendige Cookies. Optional können Sie Reichweiten-Messung (Google Ads) zustimmen. Mehr in der <a href="/recht/datenschutz">Datenschutzerklärung</a>.</p>
+      <p class="consent-text"><strong>Ihre Privatsphäre</strong> &nbsp;·&nbsp; Ohne Ihre Zustimmung setzt diese Website keine Cookies. Ihre Einstellungen (z.&nbsp;B. Hell/Dunkel) bleiben nur in Ihrem Browser gespeichert. Optional können Sie der Erfolgsmessung von Werbeanzeigen (Google Ads) zustimmen. Mehr in der <a href="/recht/datenschutz#cookies">Datenschutzerklärung</a>.</p>
       <div class="consent-categories">
         <label class="consent-toggle consent-toggle-disabled">
           <span class="consent-toggle-label label-mono">NOTWENDIG</span>
-          <input type="checkbox" checked disabled aria-label="Notwendige Cookies, immer aktiv">
+          <input type="checkbox" checked disabled aria-label="Notwendige Speicherung, immer aktiv">
           <span class="consent-toggle-hint">Immer aktiv</span>
         </label>
         <label class="consent-toggle">
-          <span class="consent-toggle-label label-mono">ANALYTICS</span>
-          <input type="checkbox" id="consent-analytics" aria-label="Google Ads Conversion-Tracking erlauben">
+          <span class="consent-toggle-label label-mono">MARKETING</span>
+          <input type="checkbox" id="consent-analytics" aria-label="Erfolgsmessung von Google-Ads-Anzeigen erlauben">
           <span class="consent-toggle-hint">Google Ads</span>
         </label>
       </div>
       <div class="consent-actions">
-        <button type="button" class="btn btn-ghost btn-sm" data-consent-action="decline">Nur notwendige</button>
-        <button type="button" class="btn btn-ghost btn-sm" data-consent-action="accept">Auswahl erlauben</button>
-        <button type="button" class="btn btn-primary btn-sm" data-consent-action="accept-all">Alle akzeptieren</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-consent-action="decline">Nur notwendige</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-consent-action="accept">Auswahl erlauben</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-consent-action="accept-all">Alle akzeptieren</button>
       </div>
     </div>
   </aside>
@@ -58,36 +60,39 @@
   <header class="site-header" data-header>
     <div class="site-header-inner">
       <a href="/" class="brand" aria-label="elevenOne — Startseite">
-        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="brand-mark" width="120" height="100" loading="eager" decoding="async">
+        <img src="/assets/img/logo-light-alpha.webp" alt="elevenOne" class="brand-mark theme-logo-light" width="120" height="100" loading="eager" decoding="async"><img src="/assets/img/logo-dark.webp" alt="elevenOne" class="brand-mark theme-logo-dark" width="120" height="100" loading="eager" decoding="async">
       </a>
       <nav class="site-nav" data-nav aria-label="Hauptnavigation">
         <ul class="nav-list">
           <li class="nav-item has-sub">
-            <button type="button" class="nav-trigger" aria-expanded="false">Unternehmen<span aria-hidden="true">▾</span></button>
+            <button type="button" class="nav-trigger" aria-expanded="false">Leistungen<span aria-hidden="true">▾</span></button>
             <ul class="nav-sub">
-              <li><a href="/unternehmen/ueber-uns">Wir über uns</a></li>
-              <li><a href="/unternehmen/roadmap">Roadmap</a></li>
+              <li><a href="/leistungen/">Pakete im Überblick</a></li>
+              <li><a href="/branchen/industrie-produktion">KI für Industrie &amp; Produktion</a></li>
+              <li><a href="/branchen/bau">KI am Bau</a></li>
             </ul>
           </li>
+          <li class="nav-item"><a href="/fuer-wen" class="nav-link nav-link-plain">Für wen</a></li>
           <li class="nav-item has-sub">
-            <button type="button" class="nav-trigger" aria-expanded="false">KI-Beratung &amp; Agentur<span aria-hidden="true">▾</span></button>
-            <ul class="nav-sub">
-              <li><a href="/leistungen/ki-checkup">KI-Checkup</a></li>
-              <li><a href="/leistungen/start-projekt">Start-Projekt</a></li>
-              <li><a href="/leistungen/ki-roadmap-projekt">KI-Roadmap-Projekt</a></li>
-              <li><a href="/leistungen/" class="nav-sub-all">Übersicht →</a></li>
-            </ul>
-          </li>
-          <li class="nav-item has-sub">
-            <button type="button" class="nav-trigger" aria-expanded="false">elevenOne Projektmanagement-Modell<span aria-hidden="true">▾</span></button>
+            <button type="button" class="nav-trigger" aria-expanded="false">Vorgehen<span aria-hidden="true">▾</span></button>
             <ul class="nav-sub">
               <li><a href="/projektmanagement/six-steps">Six Steps to Success</a></li>
               <li><a href="/projektmanagement/pcp-engineering">AI PCP-Engineering™</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a href="/kontakt" class="nav-link nav-cta">Kontakt</a></li>
+          <li class="nav-item has-sub">
+            <button type="button" class="nav-trigger" aria-expanded="false">Über uns<span aria-hidden="true">▾</span></button>
+            <ul class="nav-sub">
+              <li><a href="/unternehmen/ueber-uns">Wir über uns</a></li>
+              <li><a href="/warum-elevenone">Was uns unterscheidet</a></li>
+              <li><a href="/unternehmen/roadmap">Roadmap</a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-theme"><button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false"><svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span class="theme-toggle-label">Dunkel</span></button></li>
+          <li class="nav-item"><a href="/kontakt" class="nav-link nav-cta" data-track="nav_contact">Termin vereinbaren</a></li>
         </ul>
       </nav>
+      <a href="/kontakt" class="header-cta-mobile" data-track="nav_contact_mobile">Termin</a>
       <button type="button" class="nav-hamburger" data-nav-toggle aria-expanded="false" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
@@ -108,12 +113,12 @@
 
       <section class="legal-block">
         <h2 class="display-md">Datenschutz</h2>
-        <p>Die vorliegende Datenschutzerklärung (Fassung 2026-05-12, inhaltliche Erweiterung: Auskunftsrecht nach Art. 15, Auftragsverarbeitung, Google Ads) erklärt gemäß DSGVO (EU) 2016/679 und österreichischem Datenschutzgesetz, welche Informationen wir sammeln und wie wir Daten verwenden.</p>
+        <p>Die vorliegende Datenschutzerklärung (Fassung vom 09.10.2026) erklärt gemäß DSGVO (EU) 2016/679 und österreichischem Datenschutzgesetz, welche Informationen wir sammeln und wie wir Daten verwenden.</p>
       </section>
 
       <section class="legal-block">
-        <h2 class="display-md">Self-hosted Fonts — kein Drittland-Transfer</h2>
-        <p>Diese Website lädt sämtliche Schriftarten (Manrope, IBM Plex Mono) ausschließlich vom eigenen Server. Es findet <strong>keine</strong> Verbindung zu Google Fonts oder anderen Drittanbieter-CDNs statt. Damit werden keine personenbezogenen Daten (z.B. IP-Adresse) an Drittländer übermittelt.</p>
+        <h2 class="display-md">Schriften, Bilder und Videos vom eigenen Server</h2>
+        <p>Diese Website lädt sämtliche Schriftarten (Manrope, IBM Plex Mono), Bilder und Videos ausschließlich vom eigenen Server. Es findet <strong>keine</strong> Verbindung zu Google Fonts, Videoplattformen oder anderen Drittanbieter-CDNs statt. Damit werden keine personenbezogenen Daten (z.&nbsp;B. IP-Adresse) an Dritte übermittelt.</p>
       </section>
 
       <section class="legal-block">
@@ -136,17 +141,23 @@
       </section>
 
       <section class="legal-block">
-        <h2 class="display-md">Speicherung persönlicher Daten</h2>
-        <p>Persönliche Daten (Name, E-Mail, Adresse) werden nur für angegebene Zwecke verwendet und nicht an Dritte weitergegeben. Die Verarbeitung erfolgt nur mit Einwilligung (Artikel 6 Absatz 1 lit. a DSGVO). Ein Widerruf ist jederzeit per formloser E-Mail möglich.</p>
-        <p>Eine unverschlüsselte E-Mail-Übermittlung wird nicht empfohlen.</p>
+        <h2 class="display-md">Kontakt per E-Mail</h2>
+        <p>Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten Daten (z.&nbsp;B. Name, E-Mail-Adresse, Unternehmen, Inhalt der Anfrage) ausschließlich zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Artikel 6 Absatz 1 lit. b DSGVO, wenn Ihre Anfrage auf einen Vertrag abzielt, sonst unser berechtigtes Interesse an der Beantwortung von Anfragen (Artikel 6 Absatz 1 lit. f DSGVO).</p>
+        <p>Wir speichern Anfragen, solange es für ihre Bearbeitung erforderlich ist. Entsteht daraus eine Geschäftsbeziehung, gelten die gesetzlichen Aufbewahrungsfristen (in der Regel sieben Jahre, §&nbsp;132 BAO). Eine Weitergabe an Dritte erfolgt nicht; der E-Mail-Empfang läuft über die Server unseres E-Mail-Hosting-Anbieters, der als Auftragsverarbeiter gemäß Artikel 28 DSGVO tätig ist.</p>
+        <p>Bitte beachten Sie, dass unverschlüsselte E-Mails auf dem Übertragungsweg nicht vollständig geschützt sind.</p>
       </section>
 
       <section class="legal-block" id="cookies">
-        <h2 class="display-md">Cookies &amp; Tracking</h2>
-        <p>Diese Website verwendet ausschließlich technisch notwendige Cookies. Optional kann der Besucher der Reichweiten-Messung via Google Ads (gtag.js) zustimmen. Erst nach aktiver Zustimmung über das Cookie-Banner werden entsprechende Skripte nachgeladen.</p>
-        <p><strong>Cookie-Kategorien:</strong> unbedingt notwendig, funktionell, zielorientiert.</p>
-        <p>Eine Deaktivierung im Browser ist jederzeit möglich, kann aber Funktionalität beeinträchtigen. Der Cookie-Status kann über den Footer-Link „Cookie-Einstellungen" jederzeit widerrufen werden.</p>
-        <p><strong>Google Ads (gtag.js):</strong> Falls Sie im Cookie-Banner zustimmen, wird das Google-Ads-Conversion-Tracking-Skript (gtag.js) von Servern der Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) nachgeladen. Dabei werden Daten in die USA übermittelt; Google ist nach dem EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage: Einwilligung gemäß Artikel 6 Absatz 1 lit. a DSGVO. Sie können Ihre Einwilligung jederzeit über den Footer-Link „Cookie-Einstellungen" widerrufen. Weitere Informationen unter <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a>.</p>
+        <h2 class="display-md">Cookies, lokale Speicherung &amp; Tracking</h2>
+        <p>Ohne Ihre Zustimmung setzt diese Website <strong>keine Cookies</strong>. Damit Ihre Einstellungen beim nächsten Seitenaufruf erhalten bleiben, speichert sie lediglich folgende Einträge im lokalen Speicher (localStorage) Ihres Browsers. Diese Einträge verlassen Ihr Gerät nicht und werden nicht an uns übertragen:</p>
+        <ul class="legal-list">
+          <li><code>eo-consent-v2</code> — Ihre Auswahl im Datenschutz-Banner</li>
+          <li><code>e1-theme</code> — helle oder dunkle Darstellung</li>
+          <li><code>e1-motion</code> — ob Animationen angehalten sind</li>
+        </ul>
+        <p>Rechtsgrundlage ist §&nbsp;165 Abs.&nbsp;3 TKG 2021 (für die Bereitstellung des ausdrücklich gewünschten Dienstes unbedingt erforderlich). Sie können die Einträge jederzeit über die Einstellungen Ihres Browsers löschen.</p>
+        <p><strong>Kategorien im Banner:</strong> „Notwendig“ (die oben genannten Einträge, immer aktiv) und „Marketing“ (Google Ads, nur mit Ihrer Einwilligung). Ihre Auswahl können Sie jederzeit über den Footer-Link „Cookie-Einstellungen“ ändern oder widerrufen.</p>
+        <p><strong>Google Ads (gtag.js):</strong> Falls Sie im Banner der Kategorie „Marketing“ zustimmen, wird zur Erfolgsmessung unserer Werbeanzeigen das Google-Ads-Conversion-Tracking-Skript (gtag.js) von Servern der Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) nachgeladen. Dabei setzt Google Cookies (z.&nbsp;B. <code>_gcl_au</code>, Speicherdauer bis zu 90 Tage), und es werden Daten in die USA übermittelt; Google ist nach dem EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage: Einwilligung gemäß Artikel 6 Absatz 1 lit. a DSGVO. Sie können Ihre Einwilligung jederzeit über den Footer-Link „Cookie-Einstellungen“ widerrufen. Weitere Informationen unter <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a>.</p>
       </section>
 
       <section class="legal-block">
@@ -167,7 +178,7 @@
 
       <section class="legal-block">
         <h2 class="display-md">TLS-Verschlüsselung</h2>
-        <p>HTTPS und TLS-Verschlüsselungsprotokoll sichern die vertrauliche Datenübertragung gemäß Artikel 25 Absatz 1 DSGVO.</p>
+        <p>Die Übertragung aller Seiten erfolgt verschlüsselt über HTTPS (TLS) als technische Maßnahme zur Sicherheit der Verarbeitung gemäß Artikel 32 DSGVO.</p>
       </section>
 
       <section class="legal-block">
@@ -183,19 +194,21 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="/assets/img/logo-dark.png" alt="elevenOne" class="footer-mark" width="120" height="100" loading="lazy" decoding="async">
+        <img src="/assets/img/logo-light-alpha.webp" alt="elevenOne" class="footer-mark theme-logo-light" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/logo-dark.webp" alt="elevenOne" class="footer-mark theme-logo-dark" width="120" height="100" loading="lazy" decoding="async">
         <p>KI-Beratung &amp; KI-Agentur<br>Österreich · seit 2016</p>
       </div>
       <nav class="footer-nav" aria-label="Footer-Navigation">
         <div><h2>Unternehmen</h2><ul>
           <li><a href="/unternehmen/ueber-uns">Wir über uns</a></li>
+          <li><a href="/warum-elevenone">Was uns unterscheidet</a></li>
+          <li><a href="/fuer-wen">Für wen</a></li>
           <li><a href="/unternehmen/roadmap">Roadmap</a></li>
           <li><a href="/kontakt">Kontakt</a></li>
         </ul></div>
         <div><h2>Leistungen</h2><ul>
-          <li><a href="/leistungen/ki-checkup">KI-Checkup</a></li>
-          <li><a href="/leistungen/start-projekt">Start-Projekt</a></li>
-          <li><a href="/leistungen/ki-roadmap-projekt">KI-Roadmap-Projekt</a></li>
+          <li><a href="/leistungen/">Pakete im Überblick</a></li>
+          <li><a href="/branchen/industrie-produktion">Industrie &amp; Produktion</a></li>
+          <li><a href="/branchen/bau">Bau</a></li>
         </ul></div>
         <div><h2>Methodik</h2><ul>
           <li><a href="/projektmanagement/six-steps">Six Steps</a></li>
@@ -209,13 +222,16 @@
       </nav>
     </div>
     <div class="footer-bottom">
+      <p><button type="button" class="motion-toggle" data-motion-toggle aria-pressed="false">Animationen anhalten</button></p>
       <p>&copy; 2026 elevenOne GmbH · Alle Rechte vorbehalten</p>
       <p><a href="mailto:info@elevenone.at" data-track="footer_email">info@elevenone.at</a></p>
     </div>
   </footer>
 
-  <script src="/assets/js/consent.js?v=20260512"></script>
-  <script src="/assets/js/app.js?v=20260512"></script>
+  <script src="/assets/js/consent.js?v=20261011b"></script>
+  <script src="/assets/js/app.js?v=20261011b"></script>
+  <script src="/assets/js/theme.js?v=20261011b"></script>
+  <script src="/assets/js/dots.js?v=20261011b"></script>
   
 </body>
 </html>

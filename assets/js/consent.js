@@ -1,6 +1,6 @@
 /**
  * elevenOne — Cookie-Consent Layer (DSGVO-konform, granular)
- * - Default: keine Cookies, keine Tracker.
+ * - Default: keine Cookies, keine Tracker. Die Website selbst setzt nie Cookies (nur localStorage).
  * - LocalStorage-Key: eo-consent-v2 → JSON { necessary:true, analytics:bool }
  * - Migration vom alten v1-Format (string "granted" | "denied").
  * - Analytics-Toggle steuert das Nachladen von gtag.js.
@@ -66,15 +66,26 @@
     hideBanner();
   }
 
+  // Element, das den Banner zuletzt geöffnet hat (Footer-Link) → Fokus kehrt dorthin zurück
+  let opener = null;
+
   function hideBanner() {
     const banner = document.querySelector('[data-consent-banner]');
-    if (banner) banner.hidden = true;
+    if (!banner) return;
+    const hadFocus = banner.contains(document.activeElement);
+    banner.hidden = true;
+    if (opener) { opener.focus(); opener = null; return; }
+    // Banner beim Seitenaufruf: Fokus nicht auf <body> fallen lassen, sondern an den Inhaltsanfang
+    const main = document.getElementById('main');
+    if (hadFocus && main) main.focus({ preventScroll: true });
   }
 
-  function showBanner() {
+  function showBanner(fromEl) {
     const banner = document.querySelector('[data-consent-banner]');
     if (!banner) return;
     banner.hidden = false;
+    // Beim Öffnen per Klick den Fokus in den Banner setzen (Tastatur/Screenreader)
+    if (fromEl) { opener = fromEl; banner.focus(); }
     // Beim Re-Öffnen den aktuellen Analytics-Stand in den Toggle übertragen
     const current = readState();
     const toggle = banner.querySelector('#consent-analytics');
@@ -115,7 +126,7 @@
     document.querySelectorAll('[data-consent-reopen]').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        showBanner();
+        showBanner(link);
       });
     });
   }
