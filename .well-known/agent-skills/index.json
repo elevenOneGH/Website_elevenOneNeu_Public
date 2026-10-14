@@ -1,0 +1,12 @@
+{
+    "$schema":  "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+    "skills":  [
+                   {
+                       "name":  "elevenone-erstgespraech",
+                       "type":  "skill-md",
+                       "description":  "Firmenprofil und Pakete der elevenOne GmbH (KI-Einführung im Mittelstand, DACH-Raum) und wie ein Agent im Auftrag eines Nutzers ein kostenloses Erstgespräch anfragt.",
+                       "url":  "https://elevenone.at/.well-known/agent-skills/elevenone-erstgespraech/SKILL.md",
+                       "digest":  "sha256:8b9ca467c41d750c555bd22a43f8ae5e5c697551de73d96bf87e2ad7f7aa145c"
+                   }
+               ]
+}

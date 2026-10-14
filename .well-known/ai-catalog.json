@@ -1,0 +1,45 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "elevenOne GmbH",
+    "identifier": "did:web:elevenone.at",
+    "url": "https://elevenone.at/"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:elevenone.at:skill:erstgespraech",
+      "displayName": "Erstgespräch mit elevenOne anfragen",
+      "description": "Firmenprofil, Pakete und Ablauf, wie ein Agent im Auftrag eines Nutzers ein kostenloses Erstgespräch zur KI-Einführung anfragt.",
+      "type": "text/markdown",
+      "url": "https://elevenone.at/.well-known/agent-skills/elevenone-erstgespraech/SKILL.md",
+      "representativeQueries": [
+        "KI-Beratung für den Mittelstand in Österreich finden",
+        "Erstgespräch zur KI-Einführung vereinbaren",
+        "KI-Einführung für Logistik, Metallindustrie oder Bauindustrie"
+      ]
+    },
+    {
+      "identifier": "urn:air:elevenone.at:docs:llms-txt",
+      "displayName": "elevenOne Website-Übersicht für KI-Systeme",
+      "description": "llms.txt mit Kurzprofil und Links auf die Markdown-Version jeder Seite.",
+      "type": "text/plain",
+      "url": "https://elevenone.at/llms.txt",
+      "representativeQueries": [
+        "Was macht die elevenOne GmbH?",
+        "Welche Seiten hat elevenone.at?"
+      ]
+    },
+    {
+      "identifier": "urn:air:elevenone.at:docs:pakete",
+      "displayName": "elevenOne Pakete: Ready, Business, Professional, Excellence",
+      "description": "Leistungsübersicht als Markdown: Ready-Paket und drei Pakete mit 3, 6 und 12 Monaten Laufzeit, inklusive FAQ.",
+      "type": "text/markdown",
+      "url": "https://elevenone.at/leistungen/index.md",
+      "representativeQueries": [
+        "Welche KI-Pakete bietet elevenOne an?",
+        "Was ist der AI-Ready-Check?",
+        "Wo liegen die Daten bei elevenOne und RelationFlow?"
+      ]
+    }
+  ]
+}

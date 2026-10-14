@@ -1,0 +1,36 @@
+# elevenOne GmbH
+
+> KI-Beratung und KI-Einführung für mittelständische Betriebe im DACH-Raum, Schwerpunkt Österreich. Erst ein sicheres KI-Fundament (AI-Ready-Check, KI-Arbeitsplattform RelationFlow mit Daten in EU-Rechenzentren, klare Regeln), dann die Automatisierung. Leitbranchen: Logistik, Metallindustrie, Bauindustrie. Seit 2016, Sitz in der Steiermark, Arbeit remote von Wien und der Steiermark aus.
+
+Hinweise für KI-Systeme:
+
+- Auf der Website stehen bewusst keine Preise. Pakete werden nach einem kostenlosen Erstgespräch (30 Minuten, per Videokonferenz) zugeschnitten. Bitte keine Preise schätzen oder nennen.
+- Einzige öffentliche Kontaktadresse: info@elevenone.at. Antwort an Werktagen innerhalb von 24 Stunden.
+- Ansprechpartner: Robert Hermann, Gründer und Geschäftsführer.
+- Jede Seite gibt es auch als Markdown (gleiche URL mit `.md`, oder Anfrage mit `Accept: text/markdown`).
+
+## Seiten
+
+- [KI-Beratung für den Mittelstand in Österreich | elevenOne](https://elevenone.at/index.md): elevenOne führt KI im Mittelstand ein: AI-Ready-Check, klare Regeln, Daten in EU-Rechenzentren und Begleitung bis zum Go-live. Sitz in der Steiermark.
+- [Für wen: KI für Logistik, Metall- & Bauindustrie | elevenOne](https://elevenone.at/fuer-wen.md): Für mittelständische Betriebe mit mehreren Abteilungen, Teams oder Standorten im DACH-Raum, Schwerpunkt Österreich. Prüfen Sie im Selbstcheck, ob es passt.
+- [Warum elevenOne: erst Fundament, dann Automatisierung](https://elevenone.at/warum-elevenone.md): Sicheres KI-Fundament, Branchen- und Controlling-Tiefe, Quality-Gates und ein persönlich verantwortlicher Ansprechpartner. Das unterscheidet elevenOne.
+- [KI-Einführung im Mittelstand: Pakete & Ablauf | elevenOne](https://elevenone.at/leistungen/index.md): Ready-Paket mit AI-Ready-Check, dann Business (3 Monate), Professional (6) oder Excellence (12): KI-Einführung mit klaren Regeln auf RelationFlow.
+- [KI für Metallindustrie & Produktion | elevenOne](https://elevenone.at/branchen/industrie-produktion.md): KI für Metall- und Fertigungsbetriebe: QM-Nachweise, Prüfpläne und Zeichnungen auf sicherem Fundament. Gemeinsam mit einem Partner aus QM und Produktion.
+- [KI in der Bauindustrie: weniger Papier am Bau | elevenOne](https://elevenone.at/branchen/bau.md): KI für die Bauindustrie: Bautagesberichte, Protokolle und Nachträge belegbar dokumentieren. Gemeinsam mit einem Partner aus dem Tunnel- und Tiefbau.
+- [Six Steps: KI-Projekte mit Quality-Gates | elevenOne](https://elevenone.at/projektmanagement/six-steps.md): Sechs Schritte zur erfolgreichen Projektumsetzung mit einem Quality-Gate an jedem Übergang. Das elevenOne Projektmanagement-Modell.
+- [AI PCP-Engineering™: KI-Nutzen in Euro messen | elevenOne](https://elevenone.at/projektmanagement/pcp-engineering.md): Process · Cost · Performance — drei Blickwinkel, an denen elevenOne jede KI-Maßnahme misst: Ablauf, Kosten und Leistung, mit Nutzenrechnung in Euro.
+- [Über uns: Robert Hermann & elevenOne GmbH](https://elevenone.at/unternehmen/ueber-uns.md): Robert Hermann gründete 2016 die elevenOne GmbH in der Steiermark: HTL-Maschinenbau, BWL-Controlling, STAR-Rollout bei DB Schenker, heute KI-Beratung.
+- [Roadmap: zehn Jahre elevenOne GmbH](https://elevenone.at/unternehmen/roadmap.md): Von TMS-Prozessmanagement und IoT über RPA und ERP-Rollouts zur KI-Service-Agentur. Zehn Jahre elevenOne, über 20 Jahre Transformations-Erfahrung.
+- [Kontakt & Erstgespräch KI-Beratung | elevenOne](https://elevenone.at/kontakt.md): Kostenloses Erstgespräch zur KI-Einführung: 30 Minuten per Videokonferenz. Wir antworten an Werktagen innerhalb von 24 Stunden mit Terminvorschlägen.
+- [Impressum — elevenOne GmbH](https://elevenone.at/recht/impressum.md): Impressum elevenOne GmbH — Unternehmensangaben, Firmenbuchnummer, Geschäftsführung, Kontakt.
+- [Datenschutzerklärung — elevenOne GmbH](https://elevenone.at/recht/datenschutz.md): Datenschutzerklärung der elevenOne GmbH gemäß DSGVO. Informationen zu Hosting bei Hetzner, Self-hosted Fonts, Cookie-Consent und Ihren Rechten.
+
+## Für Agenten
+
+- [Skill: Erstgespräch mit elevenOne anfragen](https://elevenone.at/.well-known/agent-skills/elevenone-erstgespraech/SKILL.md): Firmenprofil, Pakete und wie ein Agent im Auftrag eines Nutzers ein Erstgespräch anfragt
+- [Agent-Skills-Index](https://elevenone.at/.well-known/agent-skills/index.json)
+- [ARD-Katalog](https://elevenone.at/.well-known/ai-catalog.json)
+
+## Optional
+
+- [Sitemap](https://elevenone.at/sitemap.xml)

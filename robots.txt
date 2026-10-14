@@ -1,4 +1,7 @@
+# Content Signals (https://contentsignals.org/): Suche und KI-Antworten mit Quellenangabe ja,
+# Training von KI-Modellen nein. Spec: docs/specs/spec-agent-readiness.md
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 Sitemap: https://elevenone.at/sitemap.xml
