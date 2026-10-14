@@ -11,6 +11,8 @@ LEISTUNGEN
 
 KI-Vorhaben scheitern selten an der Technik, sondern am fehlenden Fundament. Deshalb gehen wir ganzheitlich vor: erst ein tragfähiges KI-Fundament, dann die Automatisierung. Sie steigen so tief ein, wie es Ihr Betrieb gerade braucht.
 
+**Kurz gesagt:** elevenOne führt KI in mittelständischen Betrieben in drei Paketen ein: Business (3 Monate), Professional (6 Monate, Kernpaket) und Excellence (12 Monate). Jedes Paket beginnt mit dem Ready-Paket aus AI-Ready-Check mit KI-Finanzreport, Einrichtung der KI-Plattform RelationFlow und Projekt-Setup. Der Einstieg ist ein kostenloses Erstgespräch von 30 Minuten per Videokonferenz; danach stellen wir das passende Paket zusammen.
+
 ANSATZ · VIER SCHRITTE
 
 ## Vom Befund zum tragfähigen KI-Fundament
@@ -129,6 +131,8 @@ Als Partner von RelationFlow setzen wir auf eine KI-Arbeitsplattform für Teams:
 - **Freie Modellwahl** · Verschiedene KI-Modelle stehen zur Auswahl, Ihr Team wählt frei. So entsteht keine Abhängigkeit von einem einzelnen KI-Anbieter (kein Vendor-Lock-in). Welche Modelle Ihr Team nutzen darf, legen Sie in den Regeln fest.
 - **Bring your own model** · Sie können zusätzlich ein eigenes Modell anbinden, etwa ein lokal betriebenes für besonders sensible Daten.
 
+Stand: Oktober 2026
+
 BRANCHEN
 
 ## Aus der Praxis, gemeinsam mit Partnern
@@ -158,6 +162,14 @@ Erst wenn das Team geschult ist. Kein Produktivbetrieb ohne abgeschlossenes Trai
 ### Wie läuft das Erstgespräch ab?
 
 Es dauert 30 Minuten, ist kostenlos und findet per Videokonferenz statt. Wir sehen uns Ihre Ausgangslage an und sagen Ihnen offen, ob und welches Paket passt.
+
+### Was kostet eine KI-Einführung bei elevenOne?
+
+elevenOne nennt auf der Website bewusst keine Pauschalpreise, weil Umfang und Ausgangslage von Betrieb zu Betrieb stark abweichen. Im kostenlosen Erstgespräch (30 Minuten, per Videokonferenz) klären wir Ausgangslage und Ziele. Danach erhalten Sie ein Angebot für das passende Paket, auf Wunsch maßgeschneidert. Das Erstgespräch selbst ist unverbindlich.
+
+### Wie lange dauert eine KI-Einführung mit elevenOne?
+
+Je nach Paket drei, sechs oder zwölf Monate. Business (3 Monate) sichert das Fundament und löst die dringendsten Problempunkte. Professional (6 Monate) automatisiert Abläufe mit KI-Agenten und schult die Mitarbeiter in der Breite. Excellence (12 Monate) begleitet den ganzen Betrieb entlang einer KI-Roadmap. In den Echtbetrieb geht etwas erst, wenn das Team geschult ist.
 
 ### Können Pakete angepasst werden?
 

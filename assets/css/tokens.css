@@ -106,6 +106,17 @@ html:root {
   --font-display: 'Manrope', system-ui, sans-serif;
   --font-mono:    'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
   --font-body:    'Manrope', system-ui, sans-serif;
+
+  /* Motion-Tokens (Launchgrade Web Standards §9.1/§9.2, docs/specs/spec-launchgrade-standards.md A9).
+     Neue Übergänge bitte nur mit diesen Werten; > 500 ms nur begründet. */
+  --motion-duration-instant: 100ms; /* Hover, Press, Icon-Wechsel */
+  --motion-duration-short:   200ms; /* Tooltip, Dropdown, Toast */
+  --motion-duration-base:    300ms; /* Drawer, Modal, Tab-Wechsel */
+  --motion-duration-long:    500ms; /* Seitenwechsel, Hero */
+  --motion-ease-standard:    cubic-bezier(0.2, 0, 0, 1);
+  --motion-ease-out:         cubic-bezier(0, 0, 0.2, 1);
+  --motion-ease-in:          cubic-bezier(0.4, 0, 1, 1);
+  --motion-ease-emphasized:  cubic-bezier(0.05, 0.7, 0.1, 1);
 }
 
 /* ── Theme DUNKEL (bisheriges Design, per Umschalter) ────── */
@@ -232,7 +243,9 @@ input, textarea, select { cursor: text; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
   .hero-canvas-wrap canvas { display: none; }
 }

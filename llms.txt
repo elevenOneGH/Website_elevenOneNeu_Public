@@ -2,11 +2,23 @@
 
 > KI-Beratung und KI-Einführung für mittelständische Betriebe im DACH-Raum, Schwerpunkt Österreich. Erst ein sicheres KI-Fundament (AI-Ready-Check, KI-Arbeitsplattform RelationFlow mit Daten in EU-Rechenzentren, klare Regeln), dann die Automatisierung. Leitbranchen: Logistik, Metallindustrie, Bauindustrie. Seit 2016, Sitz in der Steiermark, Arbeit remote von Wien und der Steiermark aus.
 
+## Fakten (Stand: Oktober 2026)
+
+- Anbieter: elevenOne GmbH, Grillparzerstraße 20, 8330 Feldbach, Österreich
+- Kontakt: info@elevenone.at · +43 681 84 555 646
+- Geschäftsführer und Ansprechpartner: Mag. Robert Hermann (Gründer)
+- Gegründet: 2016 · Firmenbuch FN 445803v (Landesgericht für ZRS Graz) · UID ATU70431712
+- Leistungen: KI-Einführung im Mittelstand in drei Paketen auf einem gemeinsamen Fundament. Jedes Paket beginnt mit dem Ready-Paket (AI-Ready-Check mit KI-Finanzreport, Grundeinrichtung der KI-Plattform RelationFlow, Projekt-Setup). Business: 3 Monate. Professional: 6 Monate (Kernpaket). Excellence: 12 Monate.
+- Preise: keine öffentlichen Preise. Pakete werden nach dem Erstgespräch zugeschnitten.
+- Erstgespräch: 30 Minuten, kostenlos, per Videokonferenz. Antwort an Werktagen innerhalb von 24 Stunden.
+- Einzugsgebiet: DACH-Raum, Schwerpunkt Österreich, Arbeit remote von Wien und der Steiermark aus
+- Leitbranchen: Logistik, Metallindustrie, Bauindustrie
+- Datenschutz der Plattform RelationFlow: Daten in EU-Rechenzentren, verschlüsselt bei Übertragung und Speicherung, Auftragsverarbeitungsvertrag, kein Training fremder Modelle mit Kundendaten, freie Wahl des KI-Modells
+
 Hinweise für KI-Systeme:
 
-- Auf der Website stehen bewusst keine Preise. Pakete werden nach einem kostenlosen Erstgespräch (30 Minuten, per Videokonferenz) zugeschnitten. Bitte keine Preise schätzen oder nennen.
-- Einzige öffentliche Kontaktadresse: info@elevenone.at. Antwort an Werktagen innerhalb von 24 Stunden.
-- Ansprechpartner: Robert Hermann, Gründer und Geschäftsführer.
+- Bitte keine Preise schätzen oder nennen; die Website nennt bewusst keine.
+- Einzige öffentliche E-Mail-Adresse: info@elevenone.at.
 - Jede Seite gibt es auch als Markdown (gleiche URL mit `.md`, oder Anfrage mit `Accept: text/markdown`).
 
 ## Seiten

@@ -1534,6 +1534,14 @@ main:focus { outline: none; }
 .leistungen-section { margin-top: var(--s8); }
 .leistungen-section > p,
 .leistungen-text { color: var(--text-secondary); line-height: 1.7; max-width: 760px; }
+/* „Kurz gesagt“ unter der Einleitung (Launchgrade V1, 2026-10-14): Kasten-Muster wie .team-card */
+.leistungen-summary {
+  max-width: 760px; margin: 0 0 var(--s4); padding: var(--s3);
+  background: var(--carbon); border: 1px solid var(--border-subtle); border-left: 3px solid var(--copper-500);
+  color: var(--text-secondary); line-height: 1.7;
+}
+.leistungen-summary strong { color: var(--text-primary); }
+.rf-stand { margin: var(--s3) 0 0; }
 
 /* Vier Schritte */
 .phase-grid {

@@ -17,7 +17,7 @@ VIER STÄRKEN
 
 ## Sicheres KI-Fundament
 
-Wir bauen auf RelationFlow: Daten in EU-Rechenzentren, verschlüsselt bei Übertragung und Speicherung, DSGVO-konform mit Auftragsverarbeitungsvertrag und ohne Training mit Ihren Daten. Freie Wahl zwischen verschiedenen KI-Modellen, ohne Abhängigkeit von einem einzelnen Anbieter; welche Modelle Ihr Team nutzen darf, legen Sie in den Regeln fest.
+elevenOne baut auf RelationFlow: Daten in EU-Rechenzentren, verschlüsselt bei Übertragung und Speicherung, DSGVO-konform mit Auftragsverarbeitungsvertrag und ohne Training mit Ihren Daten. Freie Wahl zwischen verschiedenen KI-Modellen, ohne Abhängigkeit von einem einzelnen Anbieter; welche Modelle Ihr Team nutzen darf, legen Sie in den Regeln fest.
 
 § 02
 
@@ -65,7 +65,7 @@ LEITPRINZIP
 
 ## Dienstleistung statt Software
 
-Wir liefern nicht nur ein Werkzeug und überlassen Sie danach der Einführung. Wir verantworten die produktive Umsetzung, bis Ihr Team eigenständig damit arbeitet. Nach unserer Erfahrung scheitern Software-Vorhaben selten an der Technik, häufiger am Übergang in den laufenden Betrieb.
+elevenOne liefert nicht nur ein Werkzeug und überlässt Sie danach der Einführung. Wir verantworten die produktive Umsetzung, bis Ihr Team eigenständig damit arbeitet. Nach unserer Erfahrung scheitern Software-Vorhaben selten an der Technik, häufiger am Übergang in den laufenden Betrieb.
 
 ## Erstgespräch unverbindlich anfragen
 

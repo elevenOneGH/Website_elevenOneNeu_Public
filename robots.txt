@@ -1,7 +1,24 @@
-# Content Signals (https://contentsignals.org/): Suche und KI-Antworten mit Quellenangabe ja,
-# Training von KI-Modellen nein. Spec: docs/specs/spec-agent-readiness.md
+# elevenone.at - Crawler-Regeln
+# Inhaber-Entscheidung 2026-10-14: Suche und KI-Antworten mit Quellenangabe ja, Training von KI-Modellen nein.
+# Specs: docs/specs/spec-agent-readiness.md, docs/specs/spec-launchgrade-standards.md (E1)
+
+# Alle Crawler, auch KI-Suche (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User,
+# PerplexityBot, Perplexity-User, Applebot, Bingbot, Googlebot, Google-Extended).
+# Bewusst KEINE eigenen Gruppen fuer diese Bots: eine eigene Gruppe wuerde diese Gruppe
+# samt Content-Signal fuer sie ausser Kraft setzen.
+# Content Signals: https://contentsignals.org/
 User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
+
+# Reine KI-Trainings-Crawler (Google-Extended bleibt erlaubt, weil es bei Google
+# auch die Gemini-Antworten ausserhalb der Suche steuert)
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: Meta-ExternalAgent
+User-agent: Applebot-Extended
+Disallow: /
 
 Sitemap: https://elevenone.at/sitemap.xml
