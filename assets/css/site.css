@@ -2157,6 +2157,21 @@ html { font-size: 100%; }
   :root { --header-h: 60px; }
   .brand-mark { height: 44px; }
 }
+/* Members Lounge (2026-11-13): umrandeter Knopf rechts neben dem Logo,
+   zweizeilig und mittig; Ziel https://lounge.elevenone.at/ */
+.header-lounge {
+  display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+  flex-shrink: 0; text-align: center;
+  padding: 6px 14px; min-height: 44px;
+  border: 1px solid var(--copper-500); color: var(--copper-500);
+  font-family: var(--font-mono); font-size: .72rem; line-height: 1.3;
+  letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
+  transition: background-color var(--dur-fast, .15s) ease, color var(--dur-fast, .15s) ease;
+}
+.header-lounge:hover, .header-lounge:focus-visible { background: var(--copper-500); color: var(--ink); }
+@media (max-width: 600px) {
+  .header-lounge { padding: 4px 8px; min-height: 40px; font-size: .62rem; letter-spacing: .08em; }
+}
 /* clip statt hidden: hidden kann position:sticky in manchen Browsern aushebeln */
 body { overflow-x: clip; }
 /* Sprungziele (#anker) nicht unter dem fixierten Kopf verstecken */
